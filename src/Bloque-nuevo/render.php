@@ -7,6 +7,28 @@
 
 </div>
 
+<?php
+function render_circle_carousel_block( $attributes ) {
+    $images = $attributes['images'] ?? [];
+
+    ob_start(); ?>
+
+    <div class="circle-container">
+        <?php foreach ( $images as $image ) : ?>
+            <div class="circle">
+                <a href="#">
+                    <img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>">
+                </a>
+            </div>
+        <?php endforeach; ?>
+    </div>
+
+    <?php
+    return ob_get_clean();
+}
+?>
+
+
 <style>
 /* Contenedor principal */
 .circle-container {
