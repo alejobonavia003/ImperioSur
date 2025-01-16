@@ -130,12 +130,24 @@ __webpack_require__.r(__webpack_exports__);
 
 
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)('imperiosur/nuevo-bloque', {
+  // toma todos los metadatos de block.json
   edit: () => {
+    //edit muestra lo que se va a ver en gutenber
+
+    //extraemos todas las propiedades que creo wordpress para que se adapte al editor como estilos clases y demas
     const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)();
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      ...blockProps,
-      children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Hola desde el editor del nuevo bloque.', 'imperiosur')
-    });
+    return (
+      /*#__PURE__*/
+      // devolvemos 
+      //un div que va a tener su class="" y atributos y demas que esta definido en blockprops 
+      //esto lo que hace es adaptarlo a la interfas grafica que nos da wordpress para trabajar VERGA
+      (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        ...blockProps,
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Modificando el editor gutenber', 'imperiosur')
+      })
+      //aca luego podriamos agregar botones y lo que sea para que sea mas facil 
+      //trabajar con la interfas grafica de wordpress, 
+    );
   }
 });
 })();
