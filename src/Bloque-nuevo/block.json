@@ -12,7 +12,7 @@
       }
     },
     "editorScript": "file:./index.js",
-    "style": "file:./style.css",
+    "style": "file:./style.scss",
     "render": "file:./render.php"
   }
   

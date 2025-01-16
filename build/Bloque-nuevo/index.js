@@ -137,7 +137,7 @@ module.exports = window["wp"]["i18n"];
   \*************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":2,"name":"imperiosur/nuevo-bloque","title":"Nuevo Bloque","category":"widgets","icon":"smiley","description":"Un nuevo bloque dinámico para tu plugin.","attributes":{"content":{"type":"string","default":"Hola desde el nuevo bloque dinámico."}},"editorScript":"file:./index.js","style":"file:./style.css","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":2,"name":"imperiosur/nuevo-bloque","title":"Nuevo Bloque","category":"widgets","icon":"smiley","description":"Un nuevo bloque dinámico para tu plugin.","attributes":{"content":{"type":"string","default":"Hola desde el nuevo bloque dinámico."}},"editorScript":"file:./index.js","style":"file:./style.scss","render":"file:./render.php"}');
 
 /***/ })
 
