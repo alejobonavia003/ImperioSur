@@ -148,6 +148,12 @@ __webpack_require__.r(__webpack_exports__);
       //aca luego podriamos agregar botones y lo que sea para que sea mas facil 
       //trabajar con la interfas grafica de wordpress, 
     );
+  },
+  save: () => {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("dic", {
+      className: "nuevo-bloque",
+      children: "ahora estamos viendo esto de la web"
+    });
   }
 });
 })();

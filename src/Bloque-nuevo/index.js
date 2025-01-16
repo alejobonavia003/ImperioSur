@@ -18,4 +18,7 @@ registerBlockType('imperiosur/nuevo-bloque', {// toma todos los metadatos de blo
             
         );
     },
+    save: () => {
+        return <dic className="nuevo-bloque">ahora estamos viendo esto de la web</dic>
+    }
 });
