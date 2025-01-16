@@ -7,6 +7,20 @@
 </div>
 </div>
 
+<?php
+function imperiosur_render_block($attributes) {
+    // Obtienes la primera imagen
+    $image = isset($attributes['images'][0]) ? $attributes['images'][0] : null;
+
+    // Si hay una imagen, la mostramos
+    if ($image) {
+        return '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '" />';
+    }
+
+    return ''; // Si no hay imagen, no mostramos nada
+}
+
+?>
 
 
 
