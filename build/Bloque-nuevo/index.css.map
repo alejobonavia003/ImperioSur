@@ -1,0 +1,1 @@
+{"version":3,"file":"Bloque-nuevo/index.css","mappings":";;;AAAA;EACC;EACA;AACD,C","sources":["webpack://imperiosur/./src/Bloque-nuevo/editor.scss"],"sourcesContent":[".wp-block-create-block-imperiosur {\r\n\tborder: 1px dotted #f00;\r\n\tbackground-color: rgb(134, 199, 114);\r\n}"],"names":[],"sourceRoot":""}

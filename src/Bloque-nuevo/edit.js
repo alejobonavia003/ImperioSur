@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n';
 import { useBlockProps } from '@wordpress/block-editor';
-import './style.css';
+import './editor.scss';
 
 //basicamente dentro del edit trabajamos la interfas que vemos dentro de wordpress
 export default function Edit() {
