@@ -10,14 +10,14 @@
 <?php
 function imperiosur_render_block($attributes) {
     // Obtienes la primera imagen
-    $image = isset($attributes['images'][0]) ? $attributes['images'][0] : null;
+    $images = $attributes['images'] ?? [];
 
     // Si hay una imagen, la mostramos
-    if ($image) {
-        return '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '" />';
-    }
+    ?>
+    <img src="<?php echo ( $images['url'] ); ?>" alt="<?php echo ( $images['alt'] ); ?>">
+    <?php
 
-    return ''; // Si no hay imagen, no mostramos nada
+
 }
 
 ?>
