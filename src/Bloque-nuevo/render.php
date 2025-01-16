@@ -12,25 +12,23 @@
 
 <?php
 function imperiosur_render_block($attributes) {
-    // Obtienes las imágenes de los atributos
-    $images = isset($attributes['images']) ? $attributes['images'] : [];
+    $images = $attributes['images'] ?? [];
 
-    // Comienza el HTML de salida
-    $output = '<div class="imperiosur-images-container">';
+    ob_start(); ?>
 
-    // Recorres las imágenes y las agregas al HTML
-    foreach ($images as $image) {
-        if (isset($image['url']) && isset($image['alt'])) {
-            $output .= '<div class="imperiosur-image-item">';
-            $output .= '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '" />';
-            $output .= '</div>';
-        }
-    }
+    <div class="circle-container">
+        <?php foreach ( $images as $image ) : ?>
+            <div class="circle">
+                <a href="#">
+                    <img src="<?php echo ( $image['url'] ); ?>" alt="<?php echo ( $image['alt'] ); ?>">
+                    <span>demas</span>
+                </a>
+            </div>
+        <?php endforeach; ?>
+    </div>
 
-    // Cierra el contenedor
-    $output .= '</div>';
-
-    return $output;
+    <?php
+    return ob_get_clean();
 }
 
 ?>
