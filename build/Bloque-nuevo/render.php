@@ -7,25 +7,32 @@
 
 </div>
 
+
+
+
 <?php
-function render_circle_carousel_block( $attributes ) {
-    $images = $attributes['images'] ?? [];
+function imperiosur_render_block($attributes) {
+    // Obtienes las imágenes de los atributos
+    $images = isset($attributes['images']) ? $attributes['images'] : [];
 
-    ob_start(); ?>
+    // Comienza el HTML de salida
+    $output = '<div class="imperiosur-images-container">';
 
-    <div class="circle-container">
-        <?php foreach ( $images as $image ) : ?>
-            <div class="circle">
-                <a href="#">
-                    <img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>">
-                </a>
-            </div>
-        <?php endforeach; ?>
-    </div>
+    // Recorres las imágenes y las agregas al HTML
+    foreach ($images as $image) {
+        if (isset($image['url']) && isset($image['alt'])) {
+            $output .= '<div class="imperiosur-image-item">';
+            $output .= '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '" />';
+            $output .= '</div>';
+        }
+    }
 
-    <?php
-    return ob_get_clean();
+    // Cierra el contenedor
+    $output .= '</div>';
+
+    return $output;
 }
+
 ?>
 
 
