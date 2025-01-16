@@ -6,9 +6,9 @@
   "icon": "smiley",
   "description": "Un nuevo bloque dinámico para tu plugin.",
   "attributes": {
-    "content": {
-      "type": "string",
-      "default": "Hola desde el nuevo bloque dinámico."
+    "images": {
+      "type": "array",
+      "default": []
     }
   },
   "editorScript": "file:./index.js",
