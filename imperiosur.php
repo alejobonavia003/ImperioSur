@@ -30,4 +30,6 @@ function create_block_imperiosur_block_init() {
 	    // Registrar el nuevo bloque
 		register_block_type( __DIR__ . '/build/Bloque-nuevo' );
 }
-add_action( 'init', 'create_block_imperiosur_block_init' );
+add_action( 'init', 'create_block_imperiosur_block_init', array(
+	'render_callback' => 'mi_bloque_render_callback',
+)  );
