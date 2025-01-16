@@ -4,7 +4,7 @@ import './editor.scss';
 import { Button } from '@wordpress/components';
 
 //basicamente dentro del edit trabajamos la interfas que vemos dentro de wordpress
-export default function Edit() {
+export default function Edit({ attributes, setAttributes }) {
     const {images} = attributes;
     const onSelectImage = (newImage) => {
         setAttributes({
@@ -55,7 +55,7 @@ export default function Edit() {
                     )}
                 />
             </MediaUploadCheck>
-            
+
         </div>
 
 

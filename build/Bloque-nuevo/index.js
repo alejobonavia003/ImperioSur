@@ -28,7 +28,10 @@ __webpack_require__.r(__webpack_exports__);
 
 //basicamente dentro del edit trabajamos la interfas que vemos dentro de wordpress
 
-function Edit() {
+function Edit({
+  attributes,
+  setAttributes
+}) {
   const {
     images
   } = attributes;
