@@ -1,17 +1,11 @@
 
-<?php
-function sumar() {
-    return 2+2;
-}
-?>
-
 
 
 <div class="circle-container">
   <div class="circle">
     <a href="#">
       <img src="https://bellarosatta.com/wp-content/uploads/2025/01/D_Q_NP_881108-MLA81635198923_122024-F00.jpg-G.webp" alt="Mujer">
-      <span><?php sumar() ?></span>
+      <span>ejemplo</span>
     </a>
 </div>
 </div>
