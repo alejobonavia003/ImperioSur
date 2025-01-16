@@ -1,5 +1,6 @@
 
 
-<div class="hola">
+<div className="hola">
     <p>hola mundo!</p>
 </div>
+
