@@ -28,8 +28,6 @@ function create_block_imperiosur_block_init() {
 	register_block_type( __DIR__ . '/build/imperiosur' );
 
 	    // Registrar el nuevo bloque
-		register_block_type( __DIR__ . '/build/Bloque-nuevo', array(
-			'render_callback' => 'imperiosur_render_block'
-		));
+		register_block_type( __DIR__ . '/build/Bloque-nuevo');
 }
 add_action( 'init', 'create_block_imperiosur_block_init' );
