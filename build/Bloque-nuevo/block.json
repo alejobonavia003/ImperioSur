@@ -1,0 +1,17 @@
+{
+  "apiVersion": 2,
+  "name": "imperiosur/nuevo-bloque",
+  "title": "Nuevo Bloque",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "Un nuevo bloque dinámico para tu plugin.",
+  "attributes": {
+    "content": {
+      "type": "string",
+      "default": "Hola desde el nuevo bloque dinámico."
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style.css",
+  "render": "file:./render.php"
+}
