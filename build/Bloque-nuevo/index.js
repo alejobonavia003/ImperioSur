@@ -142,7 +142,7 @@ __webpack_require__.r(__webpack_exports__);
       //un div que va a tener su class="" y atributos y demas que esta definido en blockprops 
       //esto lo que hace es adaptarlo a la interfas grafica que nos da wordpress para trabajar VERGA
       (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        ...blockProps,
+        className: "nuevo-bloque",
         children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Modificando el editor gutenber', 'imperiosur')
       })
       //aca luego podriamos agregar botones y lo que sea para que sea mas facil 

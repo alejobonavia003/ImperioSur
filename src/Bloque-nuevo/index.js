@@ -10,7 +10,7 @@ registerBlockType('imperiosur/nuevo-bloque', {// toma todos los metadatos de blo
         return (// devolvemos 
             //un div que va a tener su class="" y atributos y demas que esta definido en blockprops 
             //esto lo que hace es adaptarlo a la interfas grafica que nos da wordpress para trabajar VERGA
-            <div {...blockProps}>
+            <div className="nuevo-bloque">
                 {__('Modificando el editor gutenber', 'imperiosur')}
             </div>
             //aca luego podriamos agregar botones y lo que sea para que sea mas facil 
