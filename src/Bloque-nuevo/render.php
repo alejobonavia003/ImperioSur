@@ -10,30 +10,6 @@
 
 
 
-<?php
-function imperiosur_render_block($attributes) {
-    $images = $attributes['images'] ?? [];
-
-    ob_start(); ?>
-
-    <div class="circle-container">
-        <?php foreach ( $images as $image ) : ?>
-            <div class="circle">
-                <a href="#">
-                    <img src="<?php echo ( $image['url'] ); ?>" alt="<?php echo ( $image['alt'] ); ?>">
-                    <span>demas</span>
-                </a>
-            </div>
-        <?php endforeach; ?>
-    </div>
-
-    <?php
-    return ob_get_clean();
-}
-
-?>
-
-
 <style>
 /* Contenedor principal */
 .circle-container {
