@@ -5,7 +5,7 @@ import { Button } from '@wordpress/components';
 
 //basicamente dentro del edit trabajamos la interfas que vemos dentro de wordpress
 export default function Edit({ attributes, setAttributes }) {
-    const {images} = attributes;
+    const {images = []} = attributes;
     const onSelectImage = (newImage) => {
         setAttributes({
             images: [...images, { url: newImage.url, alt: newImage.alt }]

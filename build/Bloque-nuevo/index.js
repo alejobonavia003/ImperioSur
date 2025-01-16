@@ -33,7 +33,7 @@ function Edit({
   setAttributes
 }) {
   const {
-    images
+    images = []
   } = attributes;
   const onSelectImage = newImage => {
     setAttributes({
