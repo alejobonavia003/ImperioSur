@@ -1,0 +1,1 @@
+{"version":3,"file":"Bloque-nuevo/style-index.css","mappings":";;;AAAA;IACI,yBAAyB;IACzB,aAAa;IACb,yBAAyB;IACzB,kBAAkB;AACtB,C","sources":["webpack://imperiosur/./src/Bloque-nuevo/style.css"],"sourcesContent":[".nuevo-bloque {\r\n    background-color: #1f6acc;\r\n    padding: 20px;\r\n    border: 1px solid #000000;\r\n    border-radius: 5px;\r\n}"],"names":[],"sourceRoot":""}

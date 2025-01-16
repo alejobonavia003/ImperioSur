@@ -1,0 +1,11 @@
+/*!********************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/Bloque-nuevo/style.css ***!
+  \********************************************************************************************************************************************************************************/
+.nuevo-bloque {
+    background-color: #1f6acc;
+    padding: 20px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+
+/*# sourceMappingURL=style-index.css.map*/
