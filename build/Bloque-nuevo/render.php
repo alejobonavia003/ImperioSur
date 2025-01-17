@@ -2,28 +2,31 @@
 
 
 <div class="circle-container">
+  <?php for ($i = 0; $i < count($attributes['images']); $i++) { ?>    
   <div class="circle">
+
     <a href="#">
-      <img src="https://bellarosatta.com/wp-content/uploads/2025/01/D_Q_NP_881108-MLA81635198923_122024-F00.jpg-G.webp" alt="Mujer">
-      <span>ejemplo5</span>
+      <img src="<?php isset($attributes['images'][i]['url']) ? $attributes['images'][i]['url'] : null ?>" alt="<?php isset($attributes['images'][i]['alt']) ? $attributes['images'][i]['alt'] : null ?>">
+      <span><?php isset($attributes['images'][i]['alt']) ? $attributes['images'][i]['alt'] : null ?></span>
     </a>
+   <?php } ?>
 </div>
 </div>
 
 <?php
 
 // Supongamos que $attributes contiene el JSON que mostraste
-$images = $attributes['images']; // Accedemos al array de imágenes
+//$images = $attributes['images']; // Accedemos al array de imágenes
 
 // Inicializamos variables para guardar las URLs
-$url1 = isset($images[0]['url']) ? $images[0]['url'] : null;
-$alt1 = isset($images[0]['alt']) ? $images[0]['alt'] : null;
-$length = count($images);
+//$url1 = isset($attributes['images'][i]['url']) ? $attributes['images'][i]['url'] : null;
+//$alt1 = isset($attributes['images'][i]['alt']) ? $attributes['images'][i]['alt'] : null;
+//$length = count($images);
 
-echo "<script>console.log('Mensaje: " . $url1 . "');</script>";
-echo "<script>console.log('Mensaje: " . $alt1 . "');</script>";
-echo "<script>console.log('Mensaje: " . $length . "');</script>";
-echo "<script>console.log('Mensaje:', " . json_encode($attributes) . ");</script>";
+//echo "<script>console.log('Mensaje: " . $url1 . "');</script>";
+//echo "<script>console.log('Mensaje: " . $alt1 . "');</script>";
+//echo "<script>console.log('Mensaje: " . $length . "');</script>";
+//echo "<script>console.log('Mensaje:', " . json_encode($attributes) . ");</script>";
 
 
 
