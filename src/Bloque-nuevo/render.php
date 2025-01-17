@@ -11,7 +11,7 @@
 </div>
 
 <?php
-$attributes = $block_type->get_attributes();
+
 echo "<script>console.log('Mensaje desde render.php');</script>";
 echo "<script>console.log('Mensaje: " . $attributes . "');</script>";
 function render_bloque_dinamico( $attributes, $content ) {
