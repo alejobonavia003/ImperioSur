@@ -5,7 +5,7 @@
   <div class="circle">
     <a href="#">
       <img src="https://bellarosatta.com/wp-content/uploads/2025/01/D_Q_NP_881108-MLA81635198923_122024-F00.jpg-G.webp" alt="Mujer">
-      <span>ejemplo</span>
+      <span>ejemplo2</span>
     </a>
 </div>
 </div>

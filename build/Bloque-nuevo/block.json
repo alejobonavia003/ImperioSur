@@ -9,7 +9,12 @@
   "attributes": {
     "images": {
       "type": "array",
-      "default": []
+      "default": [
+        {
+          "url": "https://bellarosatta.com/wp-content/uploads/2025/01/D_Q_NP_881108-MLA81635198923_122024-F00.jpg-G.webp",
+          "alt": "Mujer"
+        }
+      ]
     }
   },
   "editorScript": "file:./index.js",
