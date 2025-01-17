@@ -17,35 +17,16 @@ $images = $attributes['images']; // Accedemos al array de imágenes
 
 // Inicializamos variables para guardar las URLs
 $url1 = isset($images[0]['url']) ? $images[0]['url'] : null;
-$url2 = isset($images[1]['url']) ? $images[1]['url'] : null;
-
+$alt1 = isset($images[0]['alt']) ? $images[0]['alt'] : null;
+$length = count($images);
 
 
 echo "<script>console.log('Mensaje: " . $url1 . "');</script>";
+echo "<script>console.log('Mensaje: " . $alt1 . "');</script>";
+echo "<script>console.log('Mensaje: " . $length . "');</script>";
 echo "<script>console.log('Mensaje:', " . json_encode($attributes) . ");</script>";
 
-function render_bloque_dinamico( $attributes, $content ) {
-    // Verifica si el atributo 'images' existe y no está vacío
-    echo 'la funcion se ejecuto.' . PHP_EOL;
-    echo "<script>console.log('la funcion se ejecuto');</script>";
-    $images = $attributes['images'] ?? [];
 
-    // Depuración: Si no hay imágenes, retorna un mensaje
-    if ( empty( $images ) ) {
-        return '<p>No hay imágenes seleccionadas.</p>';
-    }
-
-    // Construye el HTML con las imágenes
-    $html = '<div class="gallery">';
-    foreach ( $images as $image ) {
-        $url = esc_url( $image['url'] ?? '' ); // Asegúrate de que 'url' exista
-        $alt = esc_attr( $image['alt'] ?? '' ); // Asegúrate de que 'alt' exista
-        $html .= sprintf( '<img src="%s" alt="%s" />', $url, $alt );
-    }
-    $html .= '</div>';
-
-    return $html;
-}
 
 ?>
 
