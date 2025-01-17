@@ -12,7 +12,16 @@
 
 <?php
 
-echo "<script>console.log('Mensaje desde render.php');</script>";
+// Supongamos que $attributes contiene el JSON que mostraste
+$images = $attributes['images']; // Accedemos al array de imágenes
+
+// Inicializamos variables para guardar las URLs
+$url1 = isset($images[0]['url']) ? $images[0]['url'] : null;
+$url2 = isset($images[1]['url']) ? $images[1]['url'] : null;
+
+
+
+echo "<script>console.log('Mensaje: " . $url1 . "');</script>";
 echo "<script>console.log('Mensaje:', " . json_encode($attributes) . ");</script>";
 
 function render_bloque_dinamico( $attributes, $content ) {
