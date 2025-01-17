@@ -3,8 +3,8 @@
   <?php for ($i = 0; $i < count($attributes['images']); $i++) { ?>    
   <div class="circle">
     <a href="#">
-      <img src="<?php ($attributes['images'][0]['url'] ? $attributes['images'][0]['url'] : null) ?>" alt="<?php ($attributes['images'][0]['alt'] ? $attributes['images'][0]['alt'] : null) ?>">
-      <span><?php ($attributes['images'][0]['alt'] ? $attributes['images'][0]['alt'] : null) ?></span>
+      <img src="<?php echo ($attributes['images'][0]['url'] ? $attributes['images'][0]['url'] : null) ?>" alt="<?php ($attributes['images'][0]['alt'] ? $attributes['images'][0]['alt'] : null) ?>">
+      <span><?php echo ($attributes['images'][0]['alt'] ? $attributes['images'][0]['alt'] : null) ?></span>
     </a>
 
 </div>
