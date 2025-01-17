@@ -6,8 +6,9 @@
       <img src="<?php ($attributes['images'][0]['url'] ? $attributes['images'][0]['url'] : null) ?>" alt="<?php ($attributes['images'][0]['alt'] ? $attributes['images'][0]['alt'] : null) ?>">
       <span><?php ($attributes['images'][0]['alt'] ? $attributes['images'][0]['alt'] : null) ?></span>
     </a>
-   <?php } ?>
+
 </div>
+<?php } ?>
 </div>
 
 
@@ -30,9 +31,7 @@ echo "<script>console.log('Mensaje: " . count($attributes['images']) . "');</scr
 
 ?>
 
-<div class="gallery">
-    <img src="https://bellarosatta.com/wp-content/uploads/2025/01/D_Q_NP_827836-MLA81635255805_122024-G.webp" alt="hombre" />
-</div>
+
 
 <style>
 /* Contenedor principal */
