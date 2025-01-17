@@ -12,22 +12,26 @@
 
 <?php
 function render_bloque_dinamico( $attributes ) {
+    // Verifica si el atributo 'images' existe y no está vacío
     $images = $attributes['images'] ?? [];
 
+    // Depuración: Si no hay imágenes, retorna un mensaje
     if ( empty( $images ) ) {
         return '<p>No hay imágenes seleccionadas.</p>';
     }
 
+    // Construye el HTML con las imágenes
     $html = '<div class="gallery">';
     foreach ( $images as $image ) {
-        $url = esc_url( $image['url'] );
-        $alt = esc_attr( $image['alt'] );
+        $url = esc_url( $image['url'] ?? '' ); // Asegúrate de que 'url' exista
+        $alt = esc_attr( $image['alt'] ?? '' ); // Asegúrate de que 'alt' exista
         $html .= sprintf( '<img src="%s" alt="%s" />', $url, $alt );
     }
     $html .= '</div>';
 
     return $html;
 }
+
 ?>
 
 <div class="gallery">

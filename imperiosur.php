@@ -36,12 +36,17 @@ function create_block_imperiosur_block_init() {
 }
 add_action( 'init', 'create_block_imperiosur_block_init' );
 
-add_action( 'init', function() {
-    $block_path = __DIR__ . '/build/Bloque-nuevo/block.json';
+function registrar_bloque_dinamico() {
+    // Ruta al archivo block.json
+    $block_path = __DIR__ . '/block.json';
 
+    // Verifica si el archivo block.json existe
     if ( file_exists( $block_path ) ) {
+        // Registra el bloque dinámico y asigna la función de renderizado
         register_block_type( $block_path, [
-            'render_callback' => 'render_bloque_dinamico'
+            'render_callback' => 'render_bloque_dinamico', // Aquí se vincula la función
         ]);
     }
-});
+}
+add_action( 'init', 'registrar_bloque_dinamico' );
+
