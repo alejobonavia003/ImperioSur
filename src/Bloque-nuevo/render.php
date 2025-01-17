@@ -5,13 +5,13 @@
   <div class="circle">
     <a href="#">
       <img src="https://bellarosatta.com/wp-content/uploads/2025/01/D_Q_NP_881108-MLA81635198923_122024-F00.jpg-G.webp" alt="Mujer">
-      <span>ejemplo2</span>
+      <span>ejemplo5</span>
     </a>
 </div>
 </div>
 
 <?php
-function render_bloque_dinamico( $attributes ) {
+function render_bloque_dinamico( $attributes, $content ) {
     // Verifica si el atributo 'images' existe y no está vacío
     $images = $attributes['images'] ?? [];
 

@@ -6,6 +6,7 @@
   "icon": "smiley",
   "description": "Un nuevo bloque dinámico para tu plugin.",
   "render": "file:./render.php",
+  "render_callback": "render_bloque_dinamico",
   "attributes": {
     "images": {
       "type": "array",
