@@ -11,8 +11,10 @@
 </div>
 
 <?php
+echo 'entraos dentro de render.php.' . PHP_EOL;
 function render_bloque_dinamico( $attributes, $content ) {
     // Verifica si el atributo 'images' existe y no está vacío
+    echo 'la funcion se ejecuto.' . PHP_EOL;
     $images = $attributes['images'] ?? [];
 
     // Depuración: Si no hay imágenes, retorna un mensaje
