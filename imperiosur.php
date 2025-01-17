@@ -29,12 +29,9 @@ function create_block_imperiosur_block_init() {
 
 	    // Registrar el nuevo bloque
 	    $plugin = __DIR__ . '/build/Bloque-nuevo';
-	    $json_file = __DIR__ . '/build/block.json';
-	    $jsonchanel = file_get_contents($json_file);
-	    $chanelPHP = json_decode($jsonchanel, true);
-		register_block_type($plugin, [
-            'render_callback' => 'render_bloque_dinamico', // Aquí se vincula la función
-        ]);
+	    $data = __DIR__ . '/build/block.json';
+
+		register_block_type($plugin, (array) json_decode(stripslashes($data)));
 }
 add_action( 'init', 'create_block_imperiosur_block_init' );
 
