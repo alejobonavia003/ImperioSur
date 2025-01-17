@@ -29,7 +29,7 @@ function create_block_imperiosur_block_init() {
 
 	    // Registrar el nuevo bloque
 	    $plugin = __DIR__ . '/build/Bloque-nuevo';
-	    $data = __DIR__ . '/build/block.json';
+	    $data = __DIR__ . '/block.json';
 
 		register_block_type($plugin, (array) json_decode(stripslashes($data)));
 }
