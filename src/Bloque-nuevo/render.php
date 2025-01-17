@@ -10,6 +10,29 @@
 </div>
 </div>
 
+<?php
+function render_bloque_dinamico( $attributes ) {
+    $images = $attributes['images'] ?? [];
+
+    if ( empty( $images ) ) {
+        return '<p>No hay imágenes seleccionadas.</p>';
+    }
+
+    $html = '<div class="gallery">';
+    foreach ( $images as $image ) {
+        $url = esc_url( $image['url'] );
+        $alt = esc_attr( $image['alt'] );
+        $html .= sprintf( '<img src="%s" alt="%s" />', $url, $alt );
+    }
+    $html .= '</div>';
+
+    return $html;
+}
+?>
+
+<div class="gallery">
+    <img src="https://bellarosatta.com/wp-content/uploads/2025/01/D_Q_NP_827836-MLA81635255805_122024-G.webp" alt="hombre" />
+</div>
 
 <style>
 /* Contenedor principal */
