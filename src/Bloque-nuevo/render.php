@@ -1,17 +1,6 @@
 
 
 
-<div class="circle-container">
-  <?php for ($i = 0; $i < count($attributes['images']); $i++) { ?>    
-  <div class="circle">
-
-    <a href="#">
-      <img src="<?php isset($attributes['images'][i]['url']) ? $attributes['images'][i]['url'] : null ?>" alt="<?php isset($attributes['images'][i]['alt']) ? $attributes['images'][i]['alt'] : null ?>">
-      <span><?php isset($attributes['images'][i]['alt']) ? $attributes['images'][i]['alt'] : null ?></span>
-    </a>
-   <?php } ?>
-</div>
-</div>
 
 <?php
 
@@ -23,9 +12,9 @@
 //$alt1 = isset($attributes['images'][i]['alt']) ? $attributes['images'][i]['alt'] : null;
 //$length = count($images);
 
-//echo "<script>console.log('Mensaje: " . $url1 . "');</script>";
-//echo "<script>console.log('Mensaje: " . $alt1 . "');</script>";
-//echo "<script>console.log('Mensaje: " . $length . "');</script>";
+echo "<script>console.log('Mensaje: " . isset($attributes['images'][i]['url']) ? $attributes['images'][i]['url'] : null . "');</script>";
+echo "<script>console.log('Mensaje: " . isset($attributes['images'][i]['alt']) ? $attributes['images'][i]['alt'] : null . "');</script>";
+echo "<script>console.log('Mensaje: " . count($images) . "');</script>";
 //echo "<script>console.log('Mensaje:', " . json_encode($attributes) . ");</script>";
 
 
