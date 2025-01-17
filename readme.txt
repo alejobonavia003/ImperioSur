@@ -54,13 +54,4 @@ You may provide arbitrary sections, in the same format as the ones above. This m
 plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
 "installation." Arbitrary sections will be shown below the built-in sections outlined above.
 
-<div class="circle-container">
-  <?php for ($i = 0; $i < count($attributes['images']); $i++) { ?>    
-  <div class="circle">
-    <a href="#">
-      <img src="<?php isset($attributes['images'][i]['url']) ? $attributes['images'][i]['url'] : null ?>" alt="<?php isset($attributes['images'][i]['alt']) ? $attributes['images'][i]['alt'] : null ?>">
-      <span><?php isset($attributes['images'][i]['alt']) ? $attributes['images'][i]['alt'] : null ?></span>
-    </a>
-   <?php } ?>
-</div>
-</div>
+
