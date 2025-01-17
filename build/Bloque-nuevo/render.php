@@ -13,7 +13,8 @@
 <?php
 
 echo "<script>console.log('Mensaje desde render.php');</script>";
-echo "<script>console.log('Mensaje: " . $attributes[0] . "');</script>";
+echo "<script>console.log('Mensaje:', " . json_encode($attributes) . ");</script>";
+
 function render_bloque_dinamico( $attributes, $content ) {
     // Verifica si el atributo 'images' existe y no está vacío
     echo 'la funcion se ejecuto.' . PHP_EOL;
