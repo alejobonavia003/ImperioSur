@@ -11,10 +11,11 @@
 </div>
 
 <?php
-echo 'entraos dentro de render.php.' . PHP_EOL;
+echo "<script>console.log('Mensaje desde render.php');</script>";
 function render_bloque_dinamico( $attributes, $content ) {
     // Verifica si el atributo 'images' existe y no está vacío
     echo 'la funcion se ejecuto.' . PHP_EOL;
+    echo "<script>console.log('la funcion se ejecuto');</script>";
     $images = $attributes['images'] ?? [];
 
     // Depuración: Si no hay imágenes, retorna un mensaje
