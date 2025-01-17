@@ -14,7 +14,7 @@
 
 echo "<script>console.log('Mensaje: " . isset($attributes['images'][0]['url']) ? $attributes['images'][0]['url'] : null . "');</script>";
 echo "<script>console.log('Mensaje: " . isset($attributes['images'][0]['alt']) ? $attributes['images'][0]['alt'] : null . "');</script>";
-echo "<script>console.log('Mensaje: " . count($images) . "');</script>";
+echo "<script>console.log('Mensaje: " . count($attributes['images']) . "');</script>";
 //echo "<script>console.log('Mensaje:', " . json_encode($attributes) . ");</script>";
 
 
