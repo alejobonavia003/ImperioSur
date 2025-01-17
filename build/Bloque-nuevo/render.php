@@ -18,8 +18,7 @@ $images = $attributes['images']; // Accedemos al array de imágenes
 // Inicializamos variables para guardar las URLs
 $url1 = isset($images[0]['url']) ? $images[0]['url'] : null;
 $alt1 = isset($images[0]['alt']) ? $images[0]['alt'] : null;
-//$length = count($images);
-
+$length = count($images);
 
 echo "<script>console.log('Mensaje: " . $url1 . "');</script>";
 echo "<script>console.log('Mensaje: " . $alt1 . "');</script>";
