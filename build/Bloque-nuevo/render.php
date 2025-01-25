@@ -115,6 +115,7 @@
 
 <script>
     document.getElementById('botonDerecha').addEventListener('click', function() {
+      console.log('click');
         const contenedor = document.getElementById('circle-container');
         contenedor.scrollBy({
             top: 0,
@@ -124,6 +125,7 @@
     });
 
     document.getElementById('botonIzquierda').addEventListener('click', function() {
+      console.log('click');
         const contenedor = document.getElementById('circle-container');
         contenedor.scrollBy({
             top: 0,
