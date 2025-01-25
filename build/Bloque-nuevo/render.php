@@ -9,8 +9,15 @@
 
 </div>
 <?php } ?>
+<button class="scroll-button" onclick="scrollCircles()">Scroll</button>
 </div>
 
+<script>
+function scrollCircles() {
+    const container = document.querySelector('.circle-container');
+    container.scrollBy({ left: 100, behavior: 'smooth' }); // Ajusta el valor de 'left' según sea necesario
+}
+</script>
 
 <?php
 
