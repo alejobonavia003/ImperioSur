@@ -36,6 +36,29 @@ echo "<script>console.log('Mensaje: " . count($attributes['images']) . "');</scr
 
 
 <style>
+
+.stk-block-horizontal-scroller:not(.editor)>.stk-block-content {
+    --stk-column-gap: 0px;
+    -ms-overflow-style: none;
+    box-sizing: border-box;
+    cursor: grab;
+    display: grid
+;
+    gap: 70px;
+    grid-auto-columns: min-content!important;
+    grid-auto-flow: column;
+    height: var(--stk-column-height);
+    overflow-x: auto;
+    overflow-x: -moz-scrollbars-none;
+    overscroll-behavior-inline: contain;
+    padding-inline-start: var(--stk-left-offset, 0);
+    /* align-content: center; */
+    place-items: center;
+}
+
+.stk-block-horizontal-scroller:not(.editor)>.stk-block-content:not(.stk--snapping-deactivated) {
+    place-content: center!important;
+}
 /* Contenedor principal */
 .circle-container {
   display: flex;
