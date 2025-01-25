@@ -44,16 +44,8 @@ echo "<script>console.log('Mensaje: " . count($attributes['images']) . "');</scr
     cursor: grab;
     display: grid
 ;
-    gap: 70px;
+    gap: 70px!important;
     grid-auto-columns: min-content!important;
-    grid-auto-flow: column;
-    height: var(--stk-column-height);
-    overflow-x: auto;
-    overflow-x: -moz-scrollbars-none;
-    overscroll-behavior-inline: contain;
-    padding-inline-start: var(--stk-left-offset, 0);
-    /* align-content: center; */
-    place-items: center;
 }
 
 .stk-block-horizontal-scroller:not(.editor)>.stk-block-content:not(.stk--snapping-deactivated) {
