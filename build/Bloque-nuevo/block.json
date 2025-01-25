@@ -16,7 +16,21 @@
           "alt": "Mujer",
           "link": "https://bellarosatta.com/"
         }
-      ]
+      ],
+      "items": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "alt": {
+            "type": "string"
+          },
+          "link": {
+            "type": "string"
+          }
+        }
+      }
     }
   },
   "editorScript": "file:./index.js",
