@@ -2,7 +2,7 @@
 <div class="circle-container">
   <?php for ($i = 0; $i < count($attributes['images']); $i++) { ?>    
   <div class="circle">
-    <a href="#">
+    <a href="<?php  echo ($attributes['images'][$i]['link'] ? $attributes['images'][$i]['link'] : null) ?>">
       <img src="<?php echo ($attributes['images'][$i]['url'] ? $attributes['images'][$i]['url'] : null) ?>" alt="<?php ($attributes['images'][0]['alt'] ? $attributes['images'][0]['alt'] : null) ?>">
       <span><?php echo ($attributes['images'][$i]['alt'] ? $attributes['images'][$i]['alt'] : null) ?></span>
     </a>
