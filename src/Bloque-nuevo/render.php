@@ -1,4 +1,3 @@
-
 <div class="circle-container" data-block-id="a46d601">
     <div class="stk-row stk-inner-blocks stk-block-content stk-content-align stk-a46d601-horizontal-scroller">
         <?php for ($i = 0; $i < count($attributes['images']); $i++) { ?>    
@@ -43,10 +42,23 @@ function scrollCircles() {
     font-size: 10px; /* Ajusta el tamaño del texto si es necesario */
   }
 }
+
+
 .circle-container {
-    position: relative;
+  position: relative;
     overflow: hidden; /* Oculta el desbordamiento */
     width: 100%; /* Ancho completo */
+    --stk-column-gap: 0px;
+    -ms-overflow-style: none;
+    box-sizing: border-box;
+    cursor: grab;
+    display: grid;
+    gap: 70px!important;
+    grid-auto-columns: min-content!important;
+    padding-left: 0!important;
+    padding-right: 0!important;
+    scroll-behavior: smooth;
+    place-content: center!important;
 }
 
 .stk-row {
@@ -54,8 +66,16 @@ function scrollCircles() {
     transition: transform 0.3s ease; /* Transición suave para el desplazamiento */
 }
 
+
+/* Estilo de cada círculo */
 .circle {
-    flex: 0 0 auto; /* No permitir que los círculos se encogen */
+  width: 120px;
+  height: 120px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  flex: 0 0 auto; /* No permitir que los círculos se encogen */
     margin: 0 10px; /* Espaciado entre círculos */
     border-radius: 50%; /* Hacer círculos */
     overflow: hidden; /* Asegurarse de que la imagen no sobresalga */
@@ -66,26 +86,31 @@ function scrollCircles() {
     justify-content: center;
 }
 
+.circle:hover {
+  transform: scale(1.1);
+}
+
+/* Imagen dentro del círculo */
 .circle img {
     width: 100%; /* Ajustar imagen al círculo */
     height: auto; /* Mantener la proporción */
     border-radius: 50%; /* Hacer la imagen circular */
 }
 
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    right: 10px; /* Posición del botón */
-    transform: translateY(-50%); /* Centrar verticalmente */
-    background-color: #007bff; /* Color de fondo */
-    color: white; /* Color del texto */
-    border: none; /* Sin borde */
-    padding: 10px; /* Espaciado interno */
-    cursor: pointer; /* Cambiar cursor */
-    border-radius: 5px; /* Bordes redondeados */
-    z-index: 10; /* Asegurarse de que el botón esté encima */
+/* Texto sobre la imagen */
+.circle span {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;
 }
-
 </style>
 
 
