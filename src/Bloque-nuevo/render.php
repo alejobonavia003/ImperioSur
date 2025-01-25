@@ -114,6 +114,8 @@
 ?>
 
 <script>
+
+document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('botonDerecha').addEventListener('click', function() {
       console.log('click');
         const contenedor = document.getElementById('circle-container');
@@ -133,4 +135,5 @@
             behavior: 'smooth' // Para un scroll suave
         });
     });
+  });
 </script>
