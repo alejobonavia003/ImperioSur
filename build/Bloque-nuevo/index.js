@@ -202,7 +202,7 @@ module.exports = window["wp"]["i18n"];
   \*************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":2,"name":"imperiosur/nuevo-bloque","title":"Nuevo Bloque","category":"widgets","icon":"smiley","description":"Un nuevo bloque dinámico para tu plugin.","render":"file:./render.php","render_callback":"render_bloque_dinamico","attributes":{"images":{"type":"array","default":[{"url":"https://bellarosatta.com/wp-content/uploads/2025/01/D_Q_NP_881108-MLA81635198923_122024-F00.jpg-G.webp","alt":"Mujer","link":"https://bellarosatta.com/"}],"items":{"type":"object","properties":{"url":{"type":"string"},"alt":{"type":"string"},"link":{"type":"string"}}}}},"editorScript":"file:./index.js","style":"file:./style.scss"}');
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":2,"name":"imperiosur/nuevo-bloque","title":"Nuevo Bloque","category":"widgets","icon":"smiley","description":"Un nuevo bloque dinámico para tu plugin.","render":"file:./render.php","render_callback":"render_bloque_dinamico","attributes":{"images":{"type":"array","default":[{"url":"https://bellarosatta.com/wp-content/uploads/2025/01/D_Q_NP_881108-MLA81635198923_122024-F00.jpg-G.webp","alt":"Mujers","link":"https://bellarosatta.com/"}],"items":{"type":"object","properties":{"url":{"type":"string"},"alt":{"type":"string"},"link":{"type":"string"}}}}},"editorScript":"file:./index.js","style":"file:./style.scss"}');
 
 /***/ })
 
