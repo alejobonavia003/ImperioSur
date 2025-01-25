@@ -39,7 +39,8 @@ function Edit({
     setAttributes({
       images: [...images, {
         url: newImage.url,
-        alt: newImage.alt
+        alt: newImage.alt,
+        link: newImage.link
       }]
     });
   };
@@ -65,6 +66,16 @@ function Edit({
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
             src: image.url,
             alt: image.alt
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Link', 'text-domain'),
+            value: image.link,
+            onChange: newLink => {
+              const newImages = [...images];
+              newImages[index].link = newLink;
+              setAttributes({
+                images: newImages
+              });
+            }
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
             isDestructive: true,
             onClick: () => removeImage(index),
