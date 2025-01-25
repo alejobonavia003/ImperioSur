@@ -44,30 +44,21 @@ function scrollCircles() {
 
 
 .circle-container {
-    --stk-column-gap: 0px;
-    -ms-overflow-style: none;
-    box-sizing: border-box;
-    cursor: grab;
-    display: grid;
-    gap: 70px!important;
-    grid-auto-columns: min-content!important;
-    padding-left: 0!important;
-    padding-right: 0!important;
-    scroll-behavior: smooth;
-    place-content: center!important;
+    overflow: auto;
+    white-space: nowrap;
 }
 
 
 /* Estilo de cada círculo */
 .circle {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+
 }
 
 .circle:hover {
