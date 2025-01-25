@@ -1,5 +1,5 @@
 
-<div class="circle-container">
+<div class="wp-block-stackable-horizontal-scroller stk-block-horizontal-scroller stk-block stk-a46d601" data-block-id="a46d601"><div class="stk-row stk-inner-blocks stk-block-content stk-content-align stk-a46d601-horizontal-scroller"><!-- wp:stackable/column {"uniqueId":"0bcaf0d"} -->
   <?php for ($i = 0; $i < count($attributes['images']); $i++) { ?>    
   <div class="circle">
     <a href="<?php  echo ($attributes['images'][$i]['link'] ? $attributes['images'][$i]['link'] : null) ?>">
