@@ -40,10 +40,11 @@ echo "<script>console.log('Mensaje: " . count($attributes['images']) . "');</scr
 @media screen and (max-width: 768px) {
   .stk-block-horizontal-scroller:not(.editor)>.stk-block-content:not(.stk--snapping-deactivated) {
     place-content: start !important;
+    gap: 30px!important;
 }
 .circle {
-    width: 80px; /* Cambia este valor según el tamaño deseado */
-    height: 80px; /* Ajusta la altura al mismo valor */
+    width: 70px!important; /* Cambia este valor según el tamaño deseado */
+    height: 70px!important; /* Ajusta la altura al mismo valor */
   }
 
   .circle span {
