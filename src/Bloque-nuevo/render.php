@@ -60,6 +60,9 @@ function scrollCircles() {
     display: inline-block;
 
 }
+::-webkit-scrollbar {
+    display: none;
+}
 
 .circle:hover {
   transform: scale(1.1);
