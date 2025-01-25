@@ -9,19 +9,28 @@
 
 </div>
 <?php } ?>
-<button class="carousel-button next" onclick="scrollCircles()">></button>
+<button class="carousel-button next" id="botonIzquierda"><</button>
+<button class="carousel-button next" id="botonDerecha">></button>
 </div>
 
 <script>
-let scrollAmount = 0;
+    document.getElementById('botonDerecha').addEventListener('click', function() {
+        const contenedor = document.getElementById('circle-container');
+        contenedor.scrollBy({
+            top: 0,
+            left: 200, // Cambia este valor para ajustar la distancia del scroll a la derecha
+            behavior: 'smooth' // Para un scroll suave
+        });
+    });
 
-function scrollCircles() {
-    const container = document.querySelector('.stk-row');
-    const scrollStep = 120; // Ajusta este valor según el tamaño de tus círculos
-    scrollAmount += scrollStep;
-    container.style.transform = `translateX(-${scrollAmount}px)`;
-}
-
+    document.getElementById('botonIzquierda').addEventListener('click', function() {
+        const contenedor = document.getElementById('circle-container');
+        contenedor.scrollBy({
+            top: 0,
+            left: -200, // Cambia este valor para ajustar la distancia del scroll a la izquierda
+            behavior: 'smooth' // Para un scroll suave
+        });
+    });
 </script>
 
 
@@ -46,6 +55,7 @@ function scrollCircles() {
 .circle-container {
     overflow: auto;
     white-space: nowrap;
+    width: 100%;
 }
 
 
