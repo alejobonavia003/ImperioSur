@@ -1,7 +1,7 @@
 {
   "apiVersion": 2,
   "name": "imperiosur/nuevo-bloque",
-  "title": "deslizador redondo",
+  "title": "deslizador de imágenes",
   "category": "widgets",
   "icon": "smiley",
   "description": "Un nuevo bloque dinámico para tu plugin.",
