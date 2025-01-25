@@ -44,9 +44,6 @@ function scrollCircles() {
 
 
 .circle-container {
-  position: relative;
-    overflow: hidden; /* Oculta el desbordamiento */
-    width: 100%; /* Ancho completo */
     --stk-column-gap: 0px;
     -ms-overflow-style: none;
     box-sizing: border-box;
@@ -60,29 +57,17 @@ function scrollCircles() {
     place-content: center!important;
 }
 
-.stk-row {
-    display: flex; /* Usar flexbox para alinear en fila */
-    transition: transform 0.3s ease; /* Transición suave para el desplazamiento */
-}
-
 
 /* Estilo de cada círculo */
 .circle {
   width: 120px;
   height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
   position: relative;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  flex: 0 0 auto; /* No permitir que los círculos se encogen */
-    margin: 0 10px; /* Espaciado entre círculos */
-    border-radius: 50%; /* Hacer círculos */
-    overflow: hidden; /* Asegurarse de que la imagen no sobresalga */
-    width: 100px; /* Ancho del círculo */
-    height: 100px; /* Alto del círculo */
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .circle:hover {
@@ -91,9 +76,10 @@ function scrollCircles() {
 
 /* Imagen dentro del círculo */
 .circle img {
-    width: 100%; /* Ajustar imagen al círculo */
-    height: auto; /* Mantener la proporción */
-    border-radius: 50%; /* Hacer la imagen circular */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* Texto sobre la imagen */
