@@ -1,17 +1,16 @@
-<div class="circle-container" data-block-id="a46d601">
-    <div class="stk-row stk-inner-blocks stk-block-content stk-content-align stk-a46d601-horizontal-scroller">
-        <?php for ($i = 0; $i < count($attributes['images']); $i++) { ?>    
-            <div class="circle">
-                <a href="<?php echo ($attributes['images'][$i]['link'] ? $attributes['images'][$i]['link'] : null) ?>">
-                    <img src="<?php echo ($attributes['images'][$i]['url'] ? $attributes['images'][$i]['url'] : null) ?>" alt="<?php echo ($attributes['images'][$i]['alt'] ? $attributes['images'][$i]['alt'] : null) ?>">
-                    <span><?php echo ($attributes['images'][$i]['alt'] ? $attributes['images'][$i]['alt'] : null) ?></span>
-                </a>
-            </div>
-        <?php } ?>
-        <button class="carousel-button next" onclick="scrollCircles()">></button>
-    </div>
-</div>
 
+<div class="circle-container" data-block-id="a46d601"><div class="stk-row stk-inner-blocks stk-block-content stk-content-align stk-a46d601-horizontal-scroller"><!-- wp:stackable/column {"uniqueId":"0bcaf0d"} -->
+  <?php for ($i = 0; $i < count($attributes['images']); $i++) { ?>    
+  <div class="circle">
+    <a href="<?php  echo ($attributes['images'][$i]['link'] ? $attributes['images'][$i]['link'] : null) ?>">
+      <img src="<?php echo ($attributes['images'][$i]['url'] ? $attributes['images'][$i]['url'] : null) ?>" alt="<?php ($attributes['images'][0]['alt'] ? $attributes['images'][0]['alt'] : null) ?>">
+      <span><?php echo ($attributes['images'][$i]['alt'] ? $attributes['images'][$i]['alt'] : null) ?></span>
+    </a>
+
+</div>
+<?php } ?>
+<button class="carousel-button next" onclick="scrollCircles()">></button>
+</div>
 
 <script>
 let scrollAmount = 0;
