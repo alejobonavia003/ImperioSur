@@ -52,6 +52,11 @@ echo "<script>console.log('Mensaje: " . count($attributes['images']) . "');</scr
   }
 }
 
+body.stk--is-blocksy-theme .stk-block {
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+
 .stk-block-horizontal-scroller:not(.editor)>.stk-block-content {
     --stk-column-gap: 0px;
     -ms-overflow-style: none;
