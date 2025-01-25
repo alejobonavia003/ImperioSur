@@ -16,5 +16,9 @@
 	},
 	"devDependencies": {
 		"@wordpress/scripts": "^30.9.0"
+	},
+	"dependencies": {
+		"saas": "^1.0.0",
+		"sass": "^1.83.4"
 	}
 }
