@@ -44,6 +44,19 @@ echo "<script>console.log('Mensaje: " . count($attributes['images']) . "');</scr
 
 <style>
 
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background-color: #007cba;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
 @media screen and (max-width: 768px) {
   .stk-block-horizontal-scroller:not(.editor)>.stk-block-content:not(.stk--snapping-deactivated) {
     place-content: start !important;
