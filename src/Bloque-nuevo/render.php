@@ -9,9 +9,8 @@
 
 </div>
 <?php } ?>
-<button class="carousel-button next" onclick="scrollCircles()">></button>
-<button id="botonIzquierda">Scroll a la Izquierda</button>
-<button id="botonDerecha">Scroll a la Derecha</button>
+<button class="carousel-button next" id="botonIzquierda"><</button>
+<button class="carousel-button next" id="botonDerecha">></button>
 </div>
 
 <script>
