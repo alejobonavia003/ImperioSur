@@ -45,9 +45,9 @@ function scrollCircles() {
 <style>
 
 @media screen and (max-width: 768px) {
-  .stk-block-horizontal-scroller:not(.editor)>.stk-block-content:not(.stk--snapping-deactivated) {
+  .circle-container {
     place-content: start !important;
-    gap: 30px!important;
+    gap: 10px!important;
 }
 .circle {
     width: 70px!important; /* Cambia este valor según el tamaño deseado */
@@ -59,12 +59,8 @@ function scrollCircles() {
   }
 }
 
-body.stk--is-blocksy-theme .stk-block {
-    padding-left: 0!important;
-    padding-right: 0!important;
-}
 
-.stk-block-horizontal-scroller:not(.editor)>.stk-block-content {
+.circle-container {
     --stk-column-gap: 0px;
     -ms-overflow-style: none;
     box-sizing: border-box;
@@ -73,21 +69,12 @@ body.stk--is-blocksy-theme .stk-block {
 ;
     gap: 70px!important;
     grid-auto-columns: min-content!important;
-}
-
-.stk-block-horizontal-scroller:not(.editor)>.stk-block-content:not(.stk--snapping-deactivated) {
+    padding-left: 0!important;
+    padding-right: 0!important;
+    scroll-behavior: smooth;
     place-content: center!important;
 }
-/* Contenedor principal */
-.circle-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  padding: 20px;
-  scroll-behavior: smooth;
-}
+
 
 /* Estilo de cada círculo */
 .circle {
