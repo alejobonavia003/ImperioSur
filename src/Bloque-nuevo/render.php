@@ -37,6 +37,20 @@ echo "<script>console.log('Mensaje: " . count($attributes['images']) . "');</scr
 
 <style>
 
+@media screen and (max-width: 768px) {
+  .stk-block-horizontal-scroller:not(.editor)>.stk-block-content:not(.stk--snapping-deactivated) {
+    place-content: start !important;
+}
+.circle {
+    width: 80px; /* Cambia este valor según el tamaño deseado */
+    height: 80px; /* Ajusta la altura al mismo valor */
+  }
+
+  .circle span {
+    font-size: 10px; /* Ajusta el tamaño del texto si es necesario */
+  }
+}
+
 .stk-block-horizontal-scroller:not(.editor)>.stk-block-content {
     --stk-column-gap: 0px;
     -ms-overflow-style: none;
