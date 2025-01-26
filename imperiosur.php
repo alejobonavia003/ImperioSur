@@ -26,12 +26,14 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function create_block_imperiosur_block_init() {
 	register_block_type( __DIR__ . '/build/imperiosur' );
+    register_block_type( __DIR__ . '/build/copyrigth' );
 
 	    // Registrar el nuevo bloque
 	    $plugin = __DIR__ . '/build/Bloque-nuevo';
 	    $data = __DIR__ . '/block.json';
 
 		register_block_type($plugin, (array) json_decode(stripslashes($data)));
+        
 }
 add_action( 'init', 'create_block_imperiosur_block_init' );
 
