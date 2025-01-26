@@ -5,8 +5,7 @@
   "version": "0.1.0",
   "title": "copyrigth",
   "category": "widgets",
-  "icon": "smiley",
-  "description": "Example block scaffolded with Create Block tool.",
+  "description": "muestra el copyrigth de la pagina",
   "example": {},
   "supports": {
     "html": false
