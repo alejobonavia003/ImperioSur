@@ -39,7 +39,7 @@
     font-size: 10px; /* Ajusta el tamaño del texto si es necesario */
   }
 }
-
+@media screen and (min-width: 868px) {
 
 .circle-container {
     /* overflow: auto; */
@@ -64,6 +64,8 @@
     position: relative;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     /* display: inline-block; */
+}
+
 }
 ::-webkit-scrollbar {
     display: none;
