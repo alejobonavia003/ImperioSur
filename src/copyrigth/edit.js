@@ -33,7 +33,7 @@ export default function Edit() {
 	const currentYear = new Date().getFullYear().toString();
 	return (
 		<p { ...useBlockProps() }>
-			{ __( {currentYear}, 'imperiosur' ) }
+			{ __( 'Imperiosur – hello from the editor!', 'imperiosur' ) }
 		</p>
 	);
 }

@@ -55,9 +55,7 @@ function Edit() {
   const currentYear = new Date().getFullYear().toString();
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)(),
-    children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)({
-      currentYear
-    }, 'imperiosur')
+    children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Imperiosur – hello from the editor!', 'imperiosur')
   });
 }
 
