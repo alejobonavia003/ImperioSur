@@ -2,6 +2,7 @@
 import { registerBlockType } from '@wordpress/blocks';
 import Edit from './edit';
 import metadata from './block.json';
+import save from './save';
 
 
 const calendarIcon = (
@@ -17,5 +18,6 @@ const calendarIcon = (
 
 registerBlockType( metadata.name, {
     icon: calendarIcon,
-    edit: Edit
+    edit: Edit,
+	save
 } );

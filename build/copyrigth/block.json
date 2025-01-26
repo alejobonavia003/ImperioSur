@@ -8,6 +8,9 @@
   "description": "muestra el copyrigth de la pagina",
   "example": {},
   "attributes": {
+    "fallbackCurrentYear": {
+      "type": "string"
+    },
     "showStartingYear": {
       "type": "boolean"
     },
