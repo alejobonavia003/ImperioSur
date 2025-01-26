@@ -8,3 +8,7 @@ if ( ! empty( $attributes['startingYear'] ) && ! empty( $attributes['showStartin
 }
 
 ?>
+
+<p <?php echo get_block_wrapper_attributes(); ?>>
+    © <?php echo esc_html( $display_date ); ?>
+</p>
