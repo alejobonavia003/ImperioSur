@@ -24,9 +24,9 @@ export default function Edit({ attributes, setAttributes }) {
         
         <div {...blockProps} >
             {__('Modificando el editor gutenber', 'imperiosur')}
-            <div className='circle-container'>
+            <div {...useBlockProps({className:'circle-container',})}>
                 {images.map((image, index) => (
-                     <div className="circle" key={index}>
+                     <div  {...useBlockProps({className:'circle',})} key={index}>
                         <img src={image.url} alt={image.alt} />
                         <TextControl
                             label={__('Link', 'text-domain')}
