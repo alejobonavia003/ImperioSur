@@ -17,7 +17,7 @@
 
 <style>
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 868px) {
   .circle-container {
     place-content: start !important;
     gap: 10px!important;
@@ -34,22 +34,28 @@
 
 
 .circle-container {
-    overflow: auto;
-    white-space: nowrap;
+    /* overflow: auto; */
+    /* white-space: nowrap; */
     width: 100%;
+    display: flex
+;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 
 /* Estilo de cada círculo */
 .circle {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     overflow: hidden;
     position: relative;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: inline-block;
-
+    /* display: inline-block; */
 }
 ::-webkit-scrollbar {
     display: none;
