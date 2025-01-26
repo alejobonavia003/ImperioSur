@@ -9,8 +9,6 @@
 
 </div>
 <?php } ?>
-<button class="carousel-button prev" id="botonIzquierda"><</button>
-<button class="carousel-button next" id="botonDerecha">></button>
 </div>
 
 
@@ -128,28 +126,3 @@
 
 
 ?>
-
-<script>
-
-document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('botonDerecha').addEventListener('click', function() {
-      console.log('click');
-        const contenedor = document.getElementById('circle-container');
-        contenedor.scrollBy({
-            top: 0,
-            left: 200, // Cambia este valor para ajustar la distancia del scroll a la derecha
-            behavior: 'smooth' // Para un scroll suave
-        });
-    });
-
-    document.getElementById('botonIzquierda').addEventListener('click', function() {
-      console.log('click');
-        const contenedor = document.getElementById('circle-container');
-        contenedor.scrollBy({
-            top: 0,
-            left: -200, // Cambia este valor para ajustar la distancia del scroll a la izquierda
-            behavior: 'smooth' // Para un scroll suave
-        });
-    });
-  });
-</script>
