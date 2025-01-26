@@ -10,14 +10,22 @@ export default function Edit({ attributes, setAttributes } ) { // como argumento
 	const { showStartingYear, startingYear } = attributes; // se extraen los atributos del bloque y se guardan  en una constante
     const currentYear = new Date().getFullYear().toString();// se obtiene el año actual y se convierte a string
 
+	let displayDate;
+
+	if ( showStartingYear && startingYear ) {// si showStartingYear y startingYear son verdaderos
+		displayDate = startingYear+"-"+currentYear ;// se asigna el valor de startingYear y currentYear a displayDate
+	} else {
+		displayDate = currentYear;// se asigna el valor de currentYear a displayDate
+	}
+
     return (
         <>
             <InspectorControls>
                 <PanelBody title={ __( 'Settings', 'imperiosur' ) }>
                     <ToggleControl
-                        checked={ !! showStartingYear }
+                        checked={ !! showStartingYear }// se convierte a booleano
                         label={ __(
-                            'mostrar año de inicio',
+                            'mostrar año de inicio',// se muestra en el panel de controles
                             'imperiosur'
                         ) }
                         onChange={ () =>
@@ -26,7 +34,7 @@ export default function Edit({ attributes, setAttributes } ) { // como argumento
                             } )
                         }
                     />
-                    { showStartingYear && (
+                    { showStartingYear && ( // si showStartingYear es verdadero se muestra el siguiente control
                         <TextControl
                             __nextHasNoMarginBottom
                             __next40pxDefaultSize
@@ -34,7 +42,7 @@ export default function Edit({ attributes, setAttributes } ) { // como argumento
                                 'año de inicio',
                                 'imperiosur'
                             ) }
-                            value={ startingYear || '' }
+                            value={ startingYear || '' }// si no hay valor se muestra un string vacio
                             onChange={ ( value ) =>
                                 setAttributes( { startingYear: value } )
                             }
@@ -42,7 +50,7 @@ export default function Edit({ attributes, setAttributes } ) { // como argumento
                     ) }
                 </PanelBody>
             </InspectorControls>
-            <p { ...useBlockProps() }>© { currentYear }</p>
+            <p { ...useBlockProps() }>© { displayDate }</p>
         </>
     );
 }

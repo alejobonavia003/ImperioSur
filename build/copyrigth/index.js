@@ -35,21 +35,35 @@ function Edit({
   } = attributes; // se extraen los atributos del bloque y se guardan  en una constante
   const currentYear = new Date().getFullYear().toString(); // se obtiene el año actual y se convierte a string
 
+  let displayDate;
+  if (showStartingYear && startingYear) {
+    // si showStartingYear y startingYear son verdaderos
+    displayDate = startingYear + "-" + currentYear; // se asigna el valor de startingYear y currentYear a displayDate
+  } else {
+    displayDate = currentYear; // se asigna el valor de currentYear a displayDate
+  }
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
         title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Settings', 'imperiosur'),
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-          checked: !!showStartingYear,
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('mostrar año de inicio', 'imperiosur'),
+          checked: !!showStartingYear // se convierte a booleano
+          ,
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('mostrar año de inicio',
+          // se muestra en el panel de controles
+          'imperiosur'),
           onChange: () => setAttributes({
             showStartingYear: !showStartingYear
           })
-        }), showStartingYear && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+        }), showStartingYear &&
+        /*#__PURE__*/
+        // si showStartingYear es verdadero se muestra el siguiente control
+        (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
           __nextHasNoMarginBottom: true,
           __next40pxDefaultSize: true,
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('año de inicio', 'imperiosur'),
-          value: startingYear || '',
+          value: startingYear || '' // si no hay valor se muestra un string vacio
+          ,
           onChange: value => setAttributes({
             startingYear: value
           })
@@ -57,7 +71,7 @@ function Edit({
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
       ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(),
-      children: ["\xA9 ", currentYear]
+      children: ["\xA9 ", displayDate]
     })]
   });
 }
