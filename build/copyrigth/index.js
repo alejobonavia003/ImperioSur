@@ -24,13 +24,30 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function Edit() {
-  const currentYear = new Date().getFullYear().toString();
+function Edit({
+  attributes,
+  setAttributes
+}) {
+  // como argumento se recibe attributes(son los atributos del bloque) y setAttributes(que es una funcion que permite modificar los atributos del bloque)
+  const {
+    showStartingYear,
+    startingYear
+  } = attributes; // se extraen los atributos del bloque y se guardan  en una constante
+  const currentYear = new Date().getFullYear().toString(); // se obtiene el año actual y se convierte a string
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Configuracion', 'imperiosur'),
-        children: "Testing"
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Settings', 'copyright-date-block'),
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+          __nextHasNoMarginBottom: true,
+          __next40pxDefaultSize: true,
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('anio de inicio', 'copyright-date-block'),
+          value: startingYear || '',
+          onChange: value => setAttributes({
+            startingYear: value
+          })
+        })
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
       ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(),
