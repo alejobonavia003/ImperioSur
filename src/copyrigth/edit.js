@@ -13,19 +13,33 @@ export default function Edit({ attributes, setAttributes } ) { // como argumento
     return (
         <>
             <InspectorControls>
-                <PanelBody title={ __( 'Settings', 'copyright-date-block' ) }>
-                    <TextControl
-                        __nextHasNoMarginBottom
-                        __next40pxDefaultSize
+                <PanelBody title={ __( 'Settings', 'imperiosur' ) }>
+                    <ToggleControl
+                        checked={ !! showStartingYear }
                         label={ __(
-                            'anio de inicio',
-                            'copyright-date-block'
+                            'mostrar año de inicio',
+                            'imperiosur'
                         ) }
-                        value={ startingYear || '' }
-                        onChange={ ( value ) =>
-                            setAttributes( { startingYear: value } )
+                        onChange={ () =>
+                            setAttributes( {
+                                showStartingYear: ! showStartingYear,
+                            } )
                         }
                     />
+                    { showStartingYear && (
+                        <TextControl
+                            __nextHasNoMarginBottom
+                            __next40pxDefaultSize
+                            label={ __(
+                                'año de inicio',
+                                'imperiosur'
+                            ) }
+                            value={ startingYear || '' }
+                            onChange={ ( value ) =>
+                                setAttributes( { startingYear: value } )
+                            }
+                        />
+                    ) }
                 </PanelBody>
             </InspectorControls>
             <p { ...useBlockProps() }>© { currentYear }</p>
