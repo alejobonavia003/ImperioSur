@@ -8,7 +8,14 @@
   "description": "muestra el copyrigth de la pagina",
   "example": {},
   "supports": {
-    "html": false
+    "color": {
+      "background": true,
+      "text": true
+    },
+    "html": false,
+    "typography": {
+      "fontSize": true
+    }
   },
   "textdomain": "imperiosur",
   "editorScript": "file:./index.js",
