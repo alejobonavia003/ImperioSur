@@ -30,10 +30,9 @@ import './editor.scss';
  * @return {Element} Element to render.
  */
 export default function Edit() {
-	const currentYear = new Date().getFullYear().toString();
-	return (
-		<p { ...useBlockProps() }>
-			{ __( 'Imperiosur – hello from the editor!', 'imperiosur' ) }
-		</p>
-	);
+    const currentYear = new Date().getFullYear().toString();
+
+    return (
+        <p { ...useBlockProps() }>© { currentYear }</p>
+    );
 }
