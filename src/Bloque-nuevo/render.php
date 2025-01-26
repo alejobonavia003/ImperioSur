@@ -19,13 +19,21 @@
 
 @media screen and (max-width: 868px) {
   .circle-container {
-    place-content: start !important;
-    gap: 10px!important;
+    overflow: auto;
+    white-space: nowrap;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 .circle {
-    width: 70px!important; /* Cambia este valor según el tamaño deseado */
-    height: 70px!important; /* Ajusta la altura al mismo valor */
-  }
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
 
   .circle span {
     font-size: 10px; /* Ajusta el tamaño del texto si es necesario */
