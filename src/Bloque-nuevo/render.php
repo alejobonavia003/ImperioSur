@@ -13,7 +13,7 @@
 
 
 
-<?php echo get_block_wrapper_attributes(['class' => 'circle-container',]) ?>
+
 <?php
 // TESTS -------------------------------------
 // Supongamos que $attributes contiene el JSON que mostraste

@@ -37,6 +37,20 @@ function create_block_imperiosur_block_init() {
 }
 add_action( 'init', 'create_block_imperiosur_block_init' );
 
+/**
+ * Enqueue block styles for front-end.
+ */
+function enqueue_block_styles() {
+    wp_enqueue_style(
+        'bloque-nuevo-style',
+        plugins_url('build/Bloque-nuevo/style-index.css', __FILE__),
+        array(),
+        filemtime(plugin_dir_path(__FILE__) . 'build/Bloque-nuevo/style-index.css')
+    );
+}
+add_action('wp_enqueue_scripts', 'enqueue_block_styles');
+
+
 function registrar_bloque_dinamico() {
     // Ruta al archivo block.json
     $block_path = __DIR__ . '/block.json';
