@@ -4,11 +4,12 @@ import Edit from './edit';
 import metadata from './block.json';
 
 const ISLogo = (
-<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-  <path d="M5 3h14c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2zm0 16h14V5H5v14z" />
-  <path d="M7 10h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm4 0h2v2h-2zm-4 4h2v2h-2zm4 0h2v2h-2z" />
-</svg>
-
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <rect width="24" height="24" fill="#0078FF" />
+        <text x="3.5" y="16" fill="#FFFFFF" font-size="10" font-family="Arial, sans-serif" font-weight="bold">
+          IS
+        </text>
+      </svg>
   );
 
 registerBlockType(metadata.name, {// toma todos los metadatos de block.json
