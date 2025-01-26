@@ -1,7 +1,7 @@
 
-<div class="circle-container" >
+<div  <?php echo get_block_wrapper_attributes(['class' => 'circle-container',]) ?> >
   <?php for ($i = 0; $i < count($attributes['images']); $i++) { ?>    
-  <div class="circle">
+  <div  <?php echo get_block_wrapper_attributes(['class' => 'circle',]) ?>>
     <a href="<?php  echo ($attributes['images'][$i]['link'] ? $attributes['images'][$i]['link'] : null) ?>">
       <img src="<?php echo ($attributes['images'][$i]['url'] ? $attributes['images'][$i]['url'] : null) ?>" alt="<?php ($attributes['images'][0]['alt'] ? $attributes['images'][0]['alt'] : null) ?>">
       <span><?php echo ($attributes['images'][$i]['alt'] ? $attributes['images'][$i]['alt'] : null) ?></span>
@@ -13,7 +13,7 @@
 
 
 
-
+<?php echo get_block_wrapper_attributes(['class' => 'circle-container',]) ?>
 <?php
 // TESTS -------------------------------------
 // Supongamos que $attributes contiene el JSON que mostraste
