@@ -23,9 +23,13 @@ __webpack_require__.r(__webpack_exports__);
 
 function Edit() {
   const currentYear = new Date().getFullYear().toString();
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
-    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)(),
-    children: ["\xA9 ", currentYear]
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
+      children: "Testing"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
+      ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)(),
+      children: ["\xA9 ", currentYear]
+    })]
   });
 }
 
@@ -77,7 +81,7 @@ module.exports = window["wp"]["i18n"];
   \**********************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/copyrigth","version":"0.1.0","title":"copyrigth","category":"widgets","description":"muestra el copyrigth de la pagina","example":{},"supports":{"color":{"background":true,"text":true},"html":false,"typography":{"fontSize":true}},"textdomain":"imperiosur","editorScript":"file:./index.js","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/copyrigth","version":"0.1.0","title":"copyrigth","category":"widgets","description":"muestra el copyrigth de la pagina","example":{},"attributes":{"showStartingYear":{"type":"boolean"},"startingYear":{"type":"string"}},"supports":{"color":{"background":true,"text":true},"html":false,"typography":{"fontSize":true}},"textdomain":"imperiosur","editorScript":"file:./index.js","render":"file:./render.php"}');
 
 /***/ })
 
