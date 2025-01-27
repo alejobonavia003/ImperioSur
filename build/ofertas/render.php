@@ -64,7 +64,7 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
 
         foreach ($containers as $index => $container) {
             // Verificar si es el contenedor principal que deseas modificar
-            if ($container->parentNode->nodeName === 'div' && $container->parentNode->getAttribute('class') === 'product-block-content') {
+            if ($container->parentNode->nodeName === 'div' && $container->parentNode->getAttribute('class') == 'woocommerce') {
                 // Eliminar el atributo "class" del contenedor principal
                 if ($container->hasAttribute('class')) {
                     $container->removeAttribute('class');
