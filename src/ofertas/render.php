@@ -154,7 +154,7 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
                     }
                   }
                     // Asignar una nueva clase única a cada producto
-                    $newProductClass = 'custom-product-' . $index . '-' . $productIndex;
+                    $newProductClass = 'custom-product-' ;
                     $product->setAttribute('class', $newProductClass);
                 }
             }
