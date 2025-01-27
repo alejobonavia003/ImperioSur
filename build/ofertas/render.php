@@ -59,12 +59,6 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
   object-fit: contain;
 }
 
-/* Título del producto */
-.woocommerce-loop-product__title {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
 
 
 /* Botón de acción */
