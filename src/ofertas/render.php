@@ -12,7 +12,7 @@ echo $products;
 
 <p> <?php echo json_encode($products[0]) ?> </p>
 <?php
-echo "<script>console.log('Mensaje: " . json_encode($products) . "');</script>";
+echo "<script>console.log('Mensaje: " . json_encode($query) . "');</script>";
 ?>
 <?php
 // TESTS -------------------------------------
