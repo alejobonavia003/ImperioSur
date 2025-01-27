@@ -78,7 +78,7 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
 }
 
 /*hover de carta*/
-[data-products] .product:hover {
+[data-products] li.product:hover {
 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 [data-products] .product:hover img {
