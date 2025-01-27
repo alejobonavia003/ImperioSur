@@ -121,21 +121,7 @@
 }
 
 
-@media (max-width: 700px) {
-    .product-block-content {
-        overflow-x: auto; /* Permitir el desplazamiento horizontal */
-        white-space: nowrap; /* Evitar que los elementos se envuelvan */
-    }
 
-    .products {
-        display: inline-flex; /* Usar flexbox para alinear los productos en una fila */
-    }
-
-    .products li {
-        display: inline-block; /* Asegurarse de que los productos se muestren en línea */
-        width: 200px; /* Establecer un ancho fijo para los productos */
-        margin-right: 10px; /* Espaciado entre productos */
-    }
 </style>
 <?php
 // TESTS -------------------------------------
