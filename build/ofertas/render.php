@@ -20,20 +20,18 @@
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
+
+
 .product-block-content {
     display: inline-flex; /* Usar flexbox para alinear los productos */
     flex-wrap: nowrap; /* Permitir que los productos se envuelvan */
     justify-content: center; /* Centrar los productos */
 }
 .products {
-  display: inline-flex;
-  gap: 10px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  flex-wrap: nowrap; /* Permitir que los productos se envuelvan */
-    justify-content: space-between; /* Espaciado entre productos */
-    width: 100%; /* Ancho completo del contenedor */
+  display: flex!important;
+    gap: 10px; /* Espaciado entre tarjetas */
+    overflow-x: auto!important; /* Permite desplazamiento horizontal */
+    padding: 10px;
 }
 
 .products li {
