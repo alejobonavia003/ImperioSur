@@ -34,6 +34,7 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
 </div>
 
 
+
 <div class="product-shortcode-block">
     <h3 class="product-block-title" style="text-align: center"> <?php echo $title ?> </h3>
     <div class="product-block-content">
@@ -45,19 +46,29 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
 
         // Buscar los elementos UL (contenedor de productos)
         $containers = $dom->getElementsByTagName('ul');
-        if ($containers->hasAttribute('class')) {
-          $containers->removeAttribute('class');
-      }
 
-        foreach ($containers as $container) {
+        foreach ($containers as $index => $container) {
+            // Eliminar el atributo "class" del contenedor principal
+            if ($container->hasAttribute('class')) {
+                $container->removeAttribute('class');
+            }
+
+            // Asignar una nueva clase única al contenedor principal
+            $newContainerClass = 'custom-container-' . $index;
+            $container->setAttribute('class', $newContainerClass);
+
             // Obtener todos los elementos LI (productos) dentro de cada UL
             $products = $container->getElementsByTagName('li');
 
-            foreach ($products as $product) {
+            foreach ($products as $productIndex => $product) {
                 // Eliminar el atributo "class" de cada producto
                 if ($product->hasAttribute('class')) {
                     $product->removeAttribute('class');
                 }
+
+                // Asignar una nueva clase única a cada producto
+                $newProductClass = 'custom-product-' . $index . '-' . $productIndex;
+                $product->setAttribute('class', $newProductClass);
             }
         }
 
