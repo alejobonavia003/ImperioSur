@@ -135,22 +135,22 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
 }
 
 /* Imagen del producto */
-.woocommerce ul.custom-container-0 li figure img {
-  width: 100%;
+.product-block-content figure img {
+  max-width: 100%;
   height: auto;
-  border-radius: 4px;
-  margin-bottom: 8px;
+}
+.product-block-content .woocommerce ul.products li.product {
+  width: 25%;
 }
 
+
 /* Título del producto */
-.woocommerce-loop-product__title a {
-  color: #333;
-  font-size: 14px;
-  font-weight: bold;
-  text-decoration: none;
-  margin: 8px 0;
-  display: block;
+.woocommerce-loop-product__title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
 
 /* Botón de acción */
 .ct-woo-card-actions .button {
