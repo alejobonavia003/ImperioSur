@@ -30,19 +30,17 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
 }
 
 /* Estilos individuales de cada producto */
-.woocommerce ul.custom-container li {
- /* flex: 0 0 auto;  Evita que se redimensionen */
- /* width: 200px;  Ancho fijo para cada producto */
-  scroll-snap-align: start; /* Alineación suave al hacer scroll */
-  background: #f9f9f9; /* Fondo minimalista */
-  border: 1px solid #ddd; /* Borde sutil */
-  border-radius: 8px; /* Bordes redondeados */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-  padding: 12px;
-  text-align: center;
+.woocommerce ul.custom-container li.product {
+    scroll-snap-align: start;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    text-align: center;
 }
 
-.product-block-content .woocommerce ul li {
+.product-block-content .woocommerce ul li.products {
   width: 20%;
 }
 .product-block-content .woocommerce ul li figure {
