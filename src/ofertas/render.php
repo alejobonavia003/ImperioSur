@@ -17,7 +17,7 @@ $query = new WC_Product_Query(array(
 echo $products;
 ?>
 
-<p> <?php echo json_encode($products) ?> </p>
+<p> <?php echo json_encode($products[0]) ?> </p>
 
 <?php
 // TESTS -------------------------------------
