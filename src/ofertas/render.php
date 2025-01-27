@@ -15,7 +15,9 @@ function get_product_with_highest_offer_title() {
             )
         )
     ));
+    echo "<script>console.log('products: " . json_encode($query) . "');</script>";
     $products = $query->get_products();
+    echo "<script>console.log('products: " . json_encode($products) . "');</script>";
 
     // Variable para almacenar el producto con la mayor oferta
     $highest_offer_product = null;
@@ -25,6 +27,8 @@ function get_product_with_highest_offer_title() {
     foreach ($products as $product) {
         $regular_price = (float) $product->get_regular_price();
         $sale_price = (float) $product->get_sale_price();
+        echo "<script>console.log('regular_price: " . json_encode($regular_price) . "');</script>";
+        echo "<script>console.log('sale_price: " . json_encode($sale_price) . "');</script>";
 
         // Calcula el descuento
         $discount = $regular_price - $sale_price;
