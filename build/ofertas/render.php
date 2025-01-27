@@ -21,7 +21,7 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
 }
 
 /* Lista de productos */
-.woocommerce ul.custom-container-0 {
+.woocommerce ul.custom-container {
   display: flex;
   gap: 16px;
   padding: 0;
@@ -30,7 +30,7 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
 }
 
 /* Estilos individuales de cada producto */
-.woocommerce ul.custom-container-0 li {
+.woocommerce ul.custom-container li {
  /* flex: 0 0 auto;  Evita que se redimensionen */
  /* width: 200px;  Ancho fijo para cada producto */
   scroll-snap-align: start; /* Alineación suave al hacer scroll */
@@ -147,14 +147,14 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
                 $products = $container->getElementsByTagName('li');
 
                 foreach ($products as $productIndex => $product) {
-                  if ($product->parentNode->parentNode->nodeName === 'div' ) {
+                  if ($product->parentNode->parentNode->parentNode->nodeName === 'div' ) {
                     // Eliminar el atributo "class" de cada producto
                     if ($product->hasAttribute('class')) {
                         $product->removeAttribute('class');
                     }
                   }
                     // Asignar una nueva clase única a cada producto
-                    $newProductClass = 'custom-product-' ;
+                    $newProductClass = 'custom-product' ;
                     $product->setAttribute('class', $newProductClass);
                 }
             }
