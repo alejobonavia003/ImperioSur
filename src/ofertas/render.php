@@ -56,8 +56,8 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
   
   max-width: 100%;
   max-height: 100%;
-  height: 90%;
-  width: 90%;
+  height: 100%;
+  width: 100%;
   object-fit: contain;
 }
 
