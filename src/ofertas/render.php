@@ -14,18 +14,11 @@
 <style>
 
 .product-shortcode-block {
-    width: 100%; /* Ancho completo del bloque */
+        width: 100%; /* Ancho completo del bloque */
     overflow: hidden; /* Evitar el desbordamiento */
     border: 1px solid #ccc;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
-
-.product-block-content {
-    display: flex; /* Usar flexbox para alinear los productos */
-    flex-wrap: wrap; /* Permitir que los productos se envuelvan */
-    justify-content: center; /* Centrar los productos */
-}
-
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
