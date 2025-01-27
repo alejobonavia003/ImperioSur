@@ -87,6 +87,11 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
 
 <style>
 
+[data-products] {
+  display: flex!important;
+  overflow: auto!important;
+}
+
 .product-shortcode-block {
         width: 100%; /* Ancho completo del bloque */
     overflow: hidden; /* Evitar el desbordamiento */
