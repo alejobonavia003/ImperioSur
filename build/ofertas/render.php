@@ -21,7 +21,7 @@
 }
 
 .product-block-content {
-    display: flex; /* Usar flexbox para alinear los productos */
+    display: inline-flex; /* Usar flexbox para alinear los productos */
     flex-wrap: wrap; /* Permitir que los productos se envuelvan */
     justify-content: center; /* Centrar los productos */
 }
