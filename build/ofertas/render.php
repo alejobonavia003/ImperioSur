@@ -42,16 +42,18 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
   text-align: center;
 }
 
-/* Imagen del producto */
-.product-block-content figure img {
-  max-width: 100%;
-  height: 300px;
-  width: 300px;
-}
 .product-block-content .woocommerce ul li {
   width: 25%;
 }
 
+/* Imagen del producto */
+.product-block-content .woocommerce ul li figure img {
+  
+  max-width: 100%;
+  max-height: 100%;
+  height: 90%;
+  width: 90%;
+}
 
 /* Título del producto */
 .woocommerce-loop-product__title {
@@ -105,7 +107,6 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
 //echo "<script>console.log('Mensaje:', " . json_encode($attributes) . ");</script>";
 
 
-echo $shortcode_content;
 ?>
 
 
