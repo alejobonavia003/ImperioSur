@@ -45,6 +45,9 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
 
         // Buscar los elementos UL (contenedor de productos)
         $containers = $dom->getElementsByTagName('ul');
+        if ($containers->hasAttribute('class')) {
+          $containers->removeAttribute('class');
+      }
 
         foreach ($containers as $container) {
             // Obtener todos los elementos LI (productos) dentro de cada UL
