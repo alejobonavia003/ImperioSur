@@ -4,98 +4,6 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
 ?>
 
 
-<div class="product-shortcode-block">
-    <h4 class="product-block-title" style="text-align: center"> <?php echo $title ?> </h4>
-    <div class="product-block-content" style="width: 100%">
-        <?php
-        // Usar DOMDocument para manipular el contenido del shortcode
-        $dom = new DOMDocument();
-        // Prevenir errores de HTML mal formado (algunos shortcodes pueden generarlos)
-        @$dom->loadHTML('<?xml encoding="utf-8" ?>' . $shortcode_content);
-
-        // Buscar los elementos UL (contenedor de productos)
-        $containers = $dom->getElementsByTagName('ul');
-
-        foreach ($containers as $index => $container) {
-            // Eliminar el atributo "class" del contenedor principal
-            if ($container->hasAttribute('class')) {
-                $container->removeAttribute('class');
-            }
-
-            // Asignar una nueva clase única al contenedor principal
-            $newContainerClass = 'custom-container-' . $index;
-            $container->setAttribute('class', $newContainerClass);
-
-            // Obtener todos los elementos LI (productos) dentro de cada UL
-            $products = $container->getElementsByTagName('li');
-
-            foreach ($products as $productIndex => $product) {
-                // Eliminar el atributo "class" de cada producto
-                if ($product->hasAttribute('class')) {
-                    $product->removeAttribute('class');
-                }
-
-                // Asignar una nueva clase única a cada producto
-                $newProductClass = 'custom-product-' . $index . '-' . $productIndex;
-                $product->setAttribute('class', $newProductClass);
-            }
-        }
-
-
-        echo $dom->saveHTML();
-
-        ?>
-    </div>
-</div>
-
-
-
-<div class="product-shortcode-block">
-    <h4 class="product-block-title" style="text-align: center"> <?php echo $title ?> </h4>
-    <div class="product-block-content" style="width: 100%">
-        <?php
-        // Usar DOMDocument para manipular el contenido del shortcode
-        $dom = new DOMDocument();
-        // Prevenir errores de HTML mal formado (algunos shortcodes pueden generarlos)
-        @$dom->loadHTML('<?xml encoding="utf-8" ?>' . $shortcode_content);
-
-        // Buscar los elementos UL (contenedor de productos)
-        $containers = $dom->getElementsByTagName('ul');
-
-        foreach ($containers as $index => $container) {
-            // Verificar si es el contenedor principal que deseas modificar
-            if ($container->parentNode->nodeName === 'div' ) {
-                // Eliminar el atributo "class" del contenedor principal
-                if ($container->hasAttribute('class')) {
-                    $container->removeAttribute('class');
-                }
-
-                // Asignar una nueva clase única al contenedor principal
-                $newContainerClass = 'custom-container-' . $index;
-                $container->setAttribute('class', $newContainerClass);
-
-                // Obtener todos los elementos LI (productos) dentro de cada UL
-                $products = $container->getElementsByTagName('li');
-
-                foreach ($products as $productIndex => $product) {
-                    // Eliminar el atributo "class" de cada producto
-                    if ($product->hasAttribute('class')) {
-                        $product->removeAttribute('class');
-                    }
-
-                    // Asignar una nueva clase única a cada producto
-                    $newProductClass = 'custom-product-' . $index . '-' . $productIndex;
-                    $product->setAttribute('class', $newProductClass);
-                }
-            }
-        }
-
-        echo $dom->saveHTML();
-        ?>
-    </div>
-</div>
-
-
 
 <style>
 
@@ -196,5 +104,55 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
 //echo "<script>console.log('Mensaje:', " . json_encode($attributes) . ");</script>";
 
 
-
+echo $shortcode_content;
 ?>
+
+
+
+
+
+<div class="product-shortcode-block">
+    <h4 class="product-block-title" style="text-align: center"> <?php echo $title ?> </h4>
+    <div class="product-block-content" style="width: 100%">
+        <?php
+        // Usar DOMDocument para manipular el contenido del shortcode
+        $dom = new DOMDocument();
+        // Prevenir errores de HTML mal formado (algunos shortcodes pueden generarlos)
+        @$dom->loadHTML('<?xml encoding="utf-8" ?>' . $shortcode_content);
+
+        // Buscar los elementos UL (contenedor de productos)
+        $containers = $dom->getElementsByTagName('ul');
+
+        foreach ($containers as $index => $container) {
+            // Verificar si es el contenedor principal que deseas modificar
+            if ($container->parentNode->nodeName === 'div' ) {
+                // Eliminar el atributo "class" del contenedor principal
+                if ($container->hasAttribute('class')) {
+                    $container->removeAttribute('class');
+                }
+
+                // Asignar una nueva clase única al contenedor principal
+                $newContainerClass = 'custom-container-' . $index;
+                $container->setAttribute('class', $newContainerClass);
+
+                // Obtener todos los elementos LI (productos) dentro de cada UL
+                $products = $container->getElementsByTagName('li');
+
+                foreach ($products as $productIndex => $product) {
+                    // Eliminar el atributo "class" de cada producto
+                    if ($product->hasAttribute('class')) {
+                        $product->removeAttribute('class');
+                    }
+
+                    // Asignar una nueva clase única a cada producto
+                    $newProductClass = 'custom-product-' . $index . '-' . $productIndex;
+                    $product->setAttribute('class', $newProductClass);
+                }
+            }
+        }
+
+        echo $dom->saveHTML();
+        ?>
+    </div>
+</div>
+
