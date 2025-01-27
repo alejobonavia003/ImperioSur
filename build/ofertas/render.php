@@ -152,10 +152,11 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
                     if ($product->hasAttribute('class')) {
                         $product->removeAttribute('class');
                     }
-                  }
+
                     // Asignar una nueva clase única a cada producto
                     $newProductClass = 'custom-product' ;
                     $product->setAttribute('class', $newProductClass);
+                  }
                 }
             }
         }
