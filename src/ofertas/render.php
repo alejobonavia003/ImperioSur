@@ -55,30 +55,7 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
 
 <style>
 
-[data-products] {
-  display: flex!important;
-  overflow: auto!important;
-}
 
-custom-container {
-  width: 100%;
-}
-
-.product-shortcode-block {
-     width: 100%; /* Ancho completo del bloque */
-    overflow: hidden; /* Evitar el desbordamiento */
-    border: 1px solid #ccc;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-.woocommerce {
-  width: 100%;
-}
-
-.woocommerce  ul {
-  width: 100%;
-  justify-content: center;
-}
 
 /* Contenedor principal de los productos */
 .product-block-content {
