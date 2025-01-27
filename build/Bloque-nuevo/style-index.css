@@ -7,8 +7,8 @@
     overflow: auto;
     white-space: nowrap;
     width: 100%;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
   }
   .circle {
     width: 70px;
@@ -32,8 +32,8 @@
     gap: 20px;
     align-items: center;
     justify-content: center;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 45px !important;
+    margin-bottom: 45px !important;
   }
   /* Estilo de cada círculo */
   .circle {
