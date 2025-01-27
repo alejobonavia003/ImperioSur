@@ -96,7 +96,7 @@ custom-container {
 }
 
 .product-shortcode-block {
-        width: 100%; /* Ancho completo del bloque */
+     width: 100%; /* Ancho completo del bloque */
     overflow: hidden; /* Evitar el desbordamiento */
     border: 1px solid #ccc;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
@@ -208,7 +208,7 @@ custom-container {
 
 .ct-woo-card-actions .button {
   background: #0073aa;
-  color: #fff;
+  color: #000000;
   padding: 8px 16px;
   font-size: 14px;
   border: none;
