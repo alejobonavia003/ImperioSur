@@ -12,24 +12,106 @@
 
 
 <style>
-.product-shortcode-block {
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.product-block-title {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #333;
+.product {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-.product-block-content {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+.product:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product figure {
+  margin: 0;
+  position: relative;
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.onsale {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: #ff4d4d;
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.woocommerce-loop-product__title {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  margin: 12px 0 8px;
+  padding: 0 8px;
+}
+
+.woocommerce-loop-product__title a {
+  color: #333;
+  text-decoration: none;
+}
+
+.woocommerce-loop-product__title a:hover {
+  color: #0073aa;
+}
+
+.meta-categories {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+}
+
+.price {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #444;
+  margin: 8px 0;
+}
+
+.sale-price del {
+  color: #999;
+  margin-right: 8px;
+}
+
+.ct-woo-card-actions {
+  text-align: center;
+  margin: 12px 0;
+}
+
+.ct-woo-card-actions .button {
+  background: #0073aa;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.ct-woo-card-actions .button:hover {
+  background: #005a87;
 }
 
 </style>
