@@ -3,40 +3,9 @@ $title = isset($attributes['title']) ? esc_html($attributes['title']) : '';
 $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes['shortcode']) : '';
 ?>
 
-<div class="product-shortcode-block">
-    <h3 class="product-block-title" style="text-align: center"> <?php echo $title ?> </h3>
-    <div class="product-block-content">
-        <?php
-        // Usar DOMDocument para manipular el contenido del shortcode
-        $dom = new DOMDocument();
-        // Prevenir errores de HTML mal formado (algunos shortcodes pueden generarlos)
-        @$dom->loadHTML('<?xml encoding="utf-8" ?>' . $shortcode_content);
-
-
-
-        // Buscar los elementos específicos generados por el shortcode
-        $cards = $dom->getElementsByTagName('ul'); // Cambiar a la etiqueta que representa las tarjetas
-;
-        foreach ($cards as $card) {
-            // Filtrar solo las tarjetas si tienen una clase específica
-            if ($card->hasAttribute('class') && strpos($card->getAttribute('class'), 'default-card-class') !== false) {
-                // Modificar las clases de las tarjetas
-                $card->setAttribute('class', $card->getAttribute('class') . ' custom-card-class');
-            }
-        }
-
-        // Agregar un contenedor personalizado si lo necesitas
-        echo '<div class="custom-cards-container">';
-        echo $dom->saveHTML();
-        echo '</div>';
-        ?>
-    </div>
-</div>
-
-
 
 <div class="product-shortcode-block">
-    <h3 class="product-block-title" style="text-align: center"> <?php echo $title ?> </h3>
+    <h4 class="product-block-title" style="text-align: center"> <?php echo $title ?> </h4>
     <div class="product-block-content" style="width: 100%">
         <?php
         // Usar DOMDocument para manipular el contenido del shortcode
@@ -108,6 +77,7 @@ custom-container {
 
 .woocommerce  ul {
   width: 100%;
+  justify-content: center;
 }
 
 .product-block-content {
