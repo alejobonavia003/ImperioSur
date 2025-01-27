@@ -45,6 +45,11 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
 .product-block-content .woocommerce ul li {
   width: 25%;
 }
+.product-block-content .woocommerce ul li figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 /* Imagen del producto */
 .product-block-content .woocommerce ul li figure img {
@@ -53,6 +58,7 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
   max-height: 100%;
   height: 90%;
   width: 90%;
+  object-fit: contain;
 }
 
 /* Título del producto */
