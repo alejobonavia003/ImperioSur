@@ -43,7 +43,7 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
 }
 
 .product-block-content .woocommerce ul li {
-  width: 25%;
+  width: 20%;
 }
 .product-block-content .woocommerce ul li figure {
   display: flex;
