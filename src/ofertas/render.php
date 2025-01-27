@@ -45,9 +45,10 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
 /* Imagen del producto */
 .product-block-content figure img {
   max-width: 100%;
-  height: auto;
+  height: 300px;
+  width: 300px;
 }
-.product-block-content .woocommerce ul.products li.product {
+.product-block-content .woocommerce ul li {
   width: 25%;
 }
 
