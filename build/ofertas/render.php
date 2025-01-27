@@ -140,18 +140,19 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
                 }
 
                 // Asignar una nueva clase única al contenedor principal
-                $newContainerClass = 'custom-container-' . $index;
+                $newContainerClass = 'custom-container';
                 $container->setAttribute('class', $newContainerClass);
 
                 // Obtener todos los elementos LI (productos) dentro de cada UL
                 $products = $container->getElementsByTagName('li');
 
                 foreach ($products as $productIndex => $product) {
+                  if ($container->parentNode->parentNode->nodeName === 'div' ) {
                     // Eliminar el atributo "class" de cada producto
                     if ($product->hasAttribute('class')) {
                         $product->removeAttribute('class');
                     }
-
+                  }
                     // Asignar una nueva clase única a cada producto
                     $newProductClass = 'custom-product-' . $index . '-' . $productIndex;
                     $product->setAttribute('class', $newProductClass);
