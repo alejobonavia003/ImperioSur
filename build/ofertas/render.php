@@ -59,7 +59,11 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
   object-fit: contain;
 }
 
+.product-block-content {
 
+    white-space: wrap!important;
+
+}
 
 /* Botón de acción */
 .ct-woo-card-actions .button {
