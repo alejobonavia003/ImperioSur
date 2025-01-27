@@ -22,7 +22,7 @@
 
 .product-block-content {
     display: inline-flex; /* Usar flexbox para alinear los productos */
-    flex-wrap: wrap; /* Permitir que los productos se envuelvan */
+    flex-wrap: nowrap; /* Permitir que los productos se envuelvan */
     justify-content: center; /* Centrar los productos */
 }
 .products {
@@ -31,7 +31,7 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  flex-wrap: wrap; /* Permitir que los productos se envuelvan */
+  flex-wrap: nowrap; /* Permitir que los productos se envuelvan */
     justify-content: space-between; /* Espaciado entre productos */
     width: 100%; /* Ancho completo del contenedor */
 }
