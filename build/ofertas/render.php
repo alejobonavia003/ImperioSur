@@ -19,12 +19,27 @@
     border: 1px solid #ccc;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
+
+.product-block-content {
+    display: flex; /* Usar flexbox para alinear los productos */
+    flex-wrap: wrap; /* Permitir que los productos se envuelvan */
+    justify-content: center; /* Centrar los productos */
+}
 .products {
   display: inline-flex;
   gap: 10px;
   list-style: none;
   padding: 0;
   margin: 0;
+  flex-wrap: wrap; /* Permitir que los productos se envuelvan */
+    justify-content: space-between; /* Espaciado entre productos */
+    width: 100%; /* Ancho completo del contenedor */
+}
+
+.products li {
+    flex: 1 1 200px; /* Permitir que los productos se ajusten y tengan un ancho mínimo */
+    margin: 10px; /* Espaciado entre productos */
+    box-sizing: border-box; /* Incluir el padding y el borde en el ancho total */
 }
 
 .product {
