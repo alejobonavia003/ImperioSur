@@ -6,12 +6,18 @@
 ?>
 
 <div class="product-shortcode-block">
-    <h2 class="product-block-title"> <?php echo $title ?> </h2>
+    <h3 class="product-block-title" style="text-align: center"> <?php echo $title ?> </h3>
     <div class="product-block-content"> <?php echo $shortcode ?> </div>
 </div>
 
 
 <style>
+
+.product-shortcode-block {
+    width: 70rem;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
