@@ -20,9 +20,8 @@
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 .products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 16px;
+  display: inline-flex;
+  gap: 10px;
   list-style: none;
   padding: 0;
   margin: 0;
