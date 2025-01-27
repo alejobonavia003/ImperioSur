@@ -147,7 +147,7 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
                 $products = $container->getElementsByTagName('li');
 
                 foreach ($products as $productIndex => $product) {
-                  if ($container->parentNode->parentNode->nodeName === 'div' ) {
+                  if ($product->parentNode->parentNode->nodeName === 'div' ) {
                     // Eliminar el atributo "class" de cada producto
                     if ($product->hasAttribute('class')) {
                         $product->removeAttribute('class');
