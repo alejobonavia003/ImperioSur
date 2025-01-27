@@ -34,6 +34,40 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
 </div>
 
 
+<div class="product-shortcode-block">
+    <h3 class="product-block-title" style="text-align: center"> <?php echo $title ?> </h3>
+    <div class="product-block-content">
+        <?php
+        // Usar DOMDocument para manipular el contenido del shortcode
+        $dom = new DOMDocument();
+        // Prevenir errores de HTML mal formado (algunos shortcodes pueden generarlos)
+        @$dom->loadHTML('<?xml encoding="utf-8" ?>' . $shortcode_content);
+
+        // Buscar los elementos UL (contenedor de productos)
+        $containers = $dom->getElementsByTagName('ul');
+
+        foreach ($containers as $container) {
+            // Obtener todos los elementos LI (productos) dentro de cada UL
+            $products = $container->getElementsByTagName('li');
+
+            foreach ($products as $product) {
+                // Eliminar el atributo "class" de cada producto
+                if ($product->hasAttribute('class')) {
+                    $product->removeAttribute('class');
+                }
+            }
+        }
+
+        // Agregar un contenedor personalizado si lo necesitas
+        echo '<div class="custom-cards-container">';
+        echo $dom->saveHTML();
+        echo '</div>';
+        ?>
+    </div>
+</div>
+
+
+
 
 
 
