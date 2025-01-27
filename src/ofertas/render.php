@@ -37,7 +37,7 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
 
 <div class="product-shortcode-block">
     <h3 class="product-block-title" style="text-align: center"> <?php echo $title ?> </h3>
-    <div class="product-block-content">
+    <div class="product-block-content" style="width: 100%">
         <?php
         // Usar DOMDocument para manipular el contenido del shortcode
         $dom = new DOMDocument();
@@ -72,10 +72,9 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
             }
         }
 
-        // Agregar un contenedor personalizado si lo necesitas
-        echo '<div class="custom-cards-container">';
+
         echo $dom->saveHTML();
-        echo '</div>';
+
         ?>
     </div>
 </div>
@@ -90,6 +89,10 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
 [data-products] {
   display: flex!important;
   overflow: auto!important;
+}
+
+custom-container {
+  width: 100%;
 }
 
 .product-shortcode-block {
