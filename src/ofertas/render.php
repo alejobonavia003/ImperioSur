@@ -4,14 +4,6 @@
 $query = new WC_Product_Query(array(
         'limit' => 4, // Sin límite
         'status' => 'publish', // Solo productos publicados
-        'meta_query' => array(
-            array(
-                'key' => '_sale_price', // Solo productos con precio de oferta
-                'value' => 0,
-                'compare' => '>',
-                'type' => 'NUMERIC'
-            )
-        )
     ));
     $products = $query->get_products();
 echo $products;
