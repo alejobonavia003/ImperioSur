@@ -41,9 +41,12 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
         // Prevenir errores de HTML mal formado (algunos shortcodes pueden generarlos)
         @$dom->loadHTML('<?xml encoding="utf-8" ?>' . $shortcode_content);
 
+
         // Buscar los elementos específicos generados por el shortcode
         $cards = $dom->getElementsByTagName('ul'); // Cambiar a la etiqueta que representa las tarjetas
         $output = ''; // Variable para almacenar una sola tarjeta
+
+        echo $cards;
 
         foreach ($cards as $card) {
             // Filtrar solo las tarjetas si tienen una clase específica
@@ -58,9 +61,7 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
         }
 
         // Imprimir la tarjeta seleccionada
-        echo '<div class="custom-card-container">';
-        echo $output;
-        echo '</div>';
+
         ?>
     </div>
 </div>
