@@ -46,7 +46,7 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
         $cards = $dom->getElementsByTagName('ul'); // Cambiar a la etiqueta que representa las tarjetas
         $output = ''; // Variable para almacenar una sola tarjeta
 
-        echo $cards;
+        echo "<script>console.log('Mensaje: " . ($cards) . "');</script>"
 
         foreach ($cards as $card) {
             // Filtrar solo las tarjetas si tienen una clase específica
