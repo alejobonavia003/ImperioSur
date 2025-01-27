@@ -102,7 +102,13 @@ custom-container {
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
+.woocommerce {
+  width: 100%;
+}
 
+.woocommerce  ul {
+  width: 100%;
+}
 
 .product-block-content {
     display: inline-flex; /* Usar flexbox para alinear los productos */
