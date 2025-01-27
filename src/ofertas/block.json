@@ -1,37 +1,10 @@
 {
   "apiVersion": 2,
-  "name": "imperiosur/nuevo-bloque",
+  "name": "imperiosur/ofertas",
   "title": "Bloque de ofertas",
   "category": "widgets",
   "description": "bloque de ofertas",
   "render": "file:./render.php",
-  "render_callback": "render_bloque_dinamico",
-  "attributes": {
-      "images": {
-          "type": "array",
-          "default": [
-              {
-                  "url": "https://bellarosatta.com/wp-content/uploads/2025/01/D_Q_NP_881108-MLA81635198923_122024-F00.jpg-G.webp",
-                  "alt": "Mujers",
-                  "link": "https://bellarosatta.com/"
-              }
-          ],
-          "items": {
-                "type": "object",
-                "properties": {
-                    "url": {
-                        "type": "string"
-                    },
-                    "alt": {
-                        "type": "string"
-                    },
-                    "link": {
-                        "type": "string"
-                    }
-                }
-            }
-      }
-  },
   "editorScript": "file:./index.js",
   "style": "file:./style.scss"
 }
