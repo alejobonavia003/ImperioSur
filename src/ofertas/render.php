@@ -2,7 +2,7 @@
 
 <?php
 $query = new WC_Product_Query(array(
-        'limit' => -1, // Sin límite
+        'limit' => 4, // Sin límite
         'status' => 'publish', // Solo productos publicados
         'meta_query' => array(
             array(
@@ -17,8 +17,11 @@ $query = new WC_Product_Query(array(
 echo $products;
 ?>
 
-<p> <?php echo json_encode($products[0]) ?> </p>
 
+<p> <?php echo json_encode($products[0]) ?> </p>
+<?php
+echo "<script>console.log('Mensaje: " . json_encode($products) . "');</script>";
+?>
 <?php
 // TESTS -------------------------------------
 // Supongamos que $attributes contiene el JSON que mostraste
