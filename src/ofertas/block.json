@@ -5,6 +5,5 @@
   "category": "widgets",
   "description": "bloque de ofertas",
   "render": "file:./render.php",
-  "editorScript": "file:./index.js",
-  "style": "file:./style.scss"
+  "editorScript": "file:./index.js"
 }

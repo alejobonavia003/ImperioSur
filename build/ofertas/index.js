@@ -91,7 +91,7 @@ module.exports = window["wp"]["i18n"];
   \********************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":2,"name":"imperiosur/ofertas","title":"Bloque de ofertas","category":"widgets","description":"bloque de ofertas","render":"file:./render.php","editorScript":"file:./index.js","style":"file:./style.scss"}');
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":2,"name":"imperiosur/ofertas","title":"Bloque de ofertas","category":"widgets","description":"bloque de ofertas","render":"file:./render.php","editorScript":"file:./index.js"}');
 
 /***/ })
 
