@@ -77,6 +77,14 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
   text-decoration: none;
 }
 
+/*hover de carta*/
+[data-products] .product:hover {
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+[data-products] .product:hover img {
+ transform: scale(1.15);
+}
+
 .ct-woo-card-actions .button:hover {
   background: #0056b3; /* Color más oscuro al pasar el mouse */
 }
