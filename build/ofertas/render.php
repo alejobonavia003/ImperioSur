@@ -155,7 +155,7 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
 /* Botón de acción */
 .ct-woo-card-actions .button {
   background: #007bff; /* Color azul para destacar */
-  color: white;
+  color: #000000;
   border: none;
   border-radius: 4px;
   padding: 8px 12px;
