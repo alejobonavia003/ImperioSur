@@ -79,7 +79,7 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
 
 /*hover de carta*/
 .woocommerce ul.custom-container li.product:hover {
-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.30);
 }
 [data-products] .product:hover img {
  transform: scale(1.15);
