@@ -1,11 +1,38 @@
 
 
 <?php
-
+    $title = isset($attributes['title']) ? esc_html($attributes['title']) : '';
+    $shortcode = isset($attributes['shortcode']) ? do_shortcode($attributes['shortcode']) : '';
 ?>
 
+<div class="product-shortcode-block">
+    <h2 class="product-block-title"> <?php echo $title ?> </h2>
+    <div class="product-block-content"> <?php echo $shortcode ?> </div>
+</div>
 
-<p>[top_rated_products limit="4"]</p>
+
+<style>
+.product-shortcode-block {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-block-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product-block-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+</style>
 <?php
 // TESTS -------------------------------------
 // Supongamos que $attributes contiene el JSON que mostraste

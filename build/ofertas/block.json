@@ -1,8 +1,18 @@
 {
   "apiVersion": 2,
   "name": "imperiosur/ofertas",
-  "title": "Bloque de ofertas",
+  "title": "Bloque de productos",
   "category": "widgets",
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Título del Bloque"
+    },
+    "shortcode": {
+      "type": "string",
+      "default": "[products limit=4 columns=4]"
+    }
+  },
   "description": "bloque de ofertas",
   "render": "file:./render.php",
   "editorScript": "file:./index.js"

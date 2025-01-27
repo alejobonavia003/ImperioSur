@@ -26,10 +26,40 @@ __webpack_require__.r(__webpack_exports__);
 
 //basicamente dentro del edit trabajamos la interfas que vemos dentro de wordpress
 
-function Edit() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+function Edit({
+  attributes,
+  setAttributes
+}) {
+  const {
+    title,
+    shortcode
+  } = attributes;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)(),
-    children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('aqui hay un bloque con la oferta del dia', 'imperiosur')
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('configuracion del bloque pa'),
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Titulo'),
+          value: title,
+          onChange: value => setAttributes({
+            title: value
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Shortcode'),
+          value: shortcode,
+          onChange: value => setAttributes({
+            shortcode: value
+          })
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
+        children: title || 'Título del Bloque'
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+        children: shortcode || '[Shortcode Aquí]'
+      })]
+    })]
   });
 }
 
@@ -91,7 +121,7 @@ module.exports = window["wp"]["i18n"];
   \********************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":2,"name":"imperiosur/ofertas","title":"Bloque de ofertas","category":"widgets","description":"bloque de ofertas","render":"file:./render.php","editorScript":"file:./index.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":2,"name":"imperiosur/ofertas","title":"Bloque de productos","category":"widgets","attributes":{"title":{"type":"string","default":"Título del Bloque"},"shortcode":{"type":"string","default":"[products limit=4 columns=4]"}},"description":"bloque de ofertas","render":"file:./render.php","editorScript":"file:./index.js"}');
 
 /***/ })
 
