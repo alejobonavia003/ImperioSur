@@ -32,39 +32,7 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
 
 
 
-<div class="product-shortcode-block">
-    <h3 class="product-block-title" style="text-align: center"> <?php echo $title ?> </h3>
-    <div class="product-block-content">
-        <?php
-        // Usar DOMDocument para manipular el contenido del shortcode
-        $dom = new DOMDocument();
-        // Prevenir errores de HTML mal formado (algunos shortcodes pueden generarlos)
-        @$dom->loadHTML('<?xml encoding="utf-8" ?>' . $shortcode_content);
 
-
-        // Buscar los elementos específicos generados por el shortcode
-        $cards = $dom->getElementsByTagName('ul'); // Cambiar a la etiqueta que representa las tarjetas
-        $output = ''; // Variable para almacenar una sola tarjeta
-
-        echo "<script>console.log('Mensaje: " . ($cards) . "');</script>"
-
-        foreach ($cards as $card) {
-            // Filtrar solo las tarjetas si tienen una clase específica
-            if ($card->hasAttribute('class') && strpos($card->getAttribute('class'), 'default-card-class') !== false) {
-                // Modificar las clases de la tarjeta (opcional)
-                $card->setAttribute('class', $card->getAttribute('class') . ' custom-card-class');
-                
-                // Guardar el HTML de esta tarjeta
-                $output = $dom->saveHTML($card);
-                break; // Salir del bucle después de encontrar la primera tarjeta
-            }
-        }
-
-        // Imprimir la tarjeta seleccionada
-
-        ?>
-    </div>
-</div>
 
 <style>
 
