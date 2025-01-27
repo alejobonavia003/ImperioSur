@@ -80,6 +80,79 @@ custom-container {
   justify-content: center;
 }
 
+/* Contenedor principal de los productos */
+.product-block-content {
+  display: flex;
+  overflow-x: auto; /* Permite el scroll horizontal */
+  white-space: nowrap; /* Mantiene los productos en una sola fila */
+  gap: 16px; /* Espaciado entre los productos */
+  padding: 16px; /* Espaciado interno */
+  scroll-snap-type: x mandatory; /* Suaviza el scroll al parar en cada producto */
+}
+
+/* Lista de productos */
+.woocommerce ul.custom-container-0 {
+  display: flex;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Estilos individuales de cada producto */
+.woocommerce ul.custom-container-0 li {
+  flex: 0 0 auto; /* Evita que se redimensionen */
+  width: 200px; /* Ancho fijo para cada producto */
+  scroll-snap-align: start; /* Alineación suave al hacer scroll */
+  background: #f9f9f9; /* Fondo minimalista */
+  border: 1px solid #ddd; /* Borde sutil */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  padding: 12px;
+  text-align: center;
+}
+
+/* Imagen del producto */
+.woocommerce ul.custom-container-0 li figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+/* Título del producto */
+.woocommerce-loop-product__title a {
+  color: #333;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 8px 0;
+  display: block;
+}
+
+/* Botón de acción */
+.ct-woo-card-actions .button {
+  background: #007bff; /* Color azul para destacar */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.ct-woo-card-actions .button:hover {
+  background: #0056b3; /* Color más oscuro al pasar el mouse */
+}
+
+/* Precio */
+.price {
+  font-size: 14px;
+  color: #555;
+  margin: 8px 0;
+  display: block;
+}
 
 
 </style>
