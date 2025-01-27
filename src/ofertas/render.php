@@ -123,8 +123,8 @@ $shortcode_content = isset($attributes['shortcode']) ? do_shortcode($attributes[
 
 /* Estilos individuales de cada producto */
 .woocommerce ul.custom-container-0 li {
-  flex: 0 0 auto; /* Evita que se redimensionen */
-  width: 200px; /* Ancho fijo para cada producto */
+ /* flex: 0 0 auto;  Evita que se redimensionen */
+ /* width: 200px;  Ancho fijo para cada producto */
   scroll-snap-align: start; /* Alineación suave al hacer scroll */
   background: #f9f9f9; /* Fondo minimalista */
   border: 1px solid #ddd; /* Borde sutil */
