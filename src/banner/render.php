@@ -6,8 +6,9 @@
 .carousel {
   position: relative;
   width: 100%;
-  margin: auto;
+  margin: 0;
   overflow: hidden;
+  padding: 0;
 }
 
 .carousel-images {
