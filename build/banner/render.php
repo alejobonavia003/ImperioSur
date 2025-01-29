@@ -15,12 +15,19 @@
   display: flex;
   transition: transform 0.5s ease-in-out;
   width: 100%;
+  overflow: hidden; /* Evita que se vean las demás imágenes */
+}
+
+.carousel-images a {
+  min-width: 100%; /* Cada imagen ocupará el 100% del contenedor */
+  flex-shrink: 0;
 }
 
 .carousel-images img {
   width: 100%;
-  flex-shrink: 0;
+  display: block;
 }
+
 
 /* Botones de navegación */
 .carousel-button {
@@ -112,6 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Función para actualizar la posición del carrusel
   function updateCarousel(index) {
     carouselImages.style.transform = `translateX(-${index * 100}%)`;
+carouselImages.style.transition = 'transform 0.5s ease-in-out';
     indicators.forEach((btn, i) => {
       btn.classList.toggle('active', i === index);
     });
