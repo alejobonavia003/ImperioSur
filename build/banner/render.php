@@ -81,7 +81,7 @@
   <?php for ($i = 0; $i < count($attributes['images']); $i++) { ?>  
     <img 
     src="<?php echo ($attributes['images'][$i]['url'] ? $attributes['images'][$i]['url'] : null) ?>" 
-    href="<?php ($attributes['images'][0]['link'] ? $attributes['images'][0]['link'] : null) ?>">
+    href="<?php ($attributes['images'][$i]['link'] ? $attributes['images'][$i]['link'] : null) ?>">
     <?php } ?>
   </div>
 
