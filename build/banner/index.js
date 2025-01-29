@@ -20,13 +20,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
 
 
-
-
-//basicamente dentro del edit trabajamos la interfas que vemos dentro de wordpress
 
 
 function Edit({
@@ -40,71 +35,69 @@ function Edit({
     setAttributes({
       images: [...images, {
         url: newImage.url,
-        link: newImage.link
-      }]
+        link: newImage.link || ''
+      }] // Asegura que el link no sea undefined
     });
   };
   const removeImage = indexToRemove => {
-    const newImages = images.filter((_, index) => index !== indexToRemove);
     setAttributes({
-      images: newImages
+      images: images.filter((_, index) => index !== indexToRemove)
     });
   };
-  //extraemos todas las propiedades que creo wordpress para que se adapte al editor como estilos clases y demas
-  const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)();
-  return (
-    /*#__PURE__*/
-    // retornamos
-    //un div que va a tener su class="" y atributos y demas que esta definido en blockprops 
-    //esto lo que hace es adaptarlo a la interfas grafica que nos da wordpress para trabajar VERGA
-    (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      ...blockProps,
-      children: [(0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('BANNER QUE OCUPA EL 100% DEL ANCHO', 'imperiosur'), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)(),
-        children: images.map((image, index) => /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_4__.createElement)("div", {
-          ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)(),
-          key: index
-        }, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-          src: image.url
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Link', 'imperiosur'),
-          value: image.link,
-          onChange: newLink => {
-            const newImages = [...images];
-            newImages[index].link = newLink;
-            setAttributes({
-              images: newImages
-            });
-          }
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
-          isDestructive: true,
-          onClick: () => removeImage(index),
-          style: {
-            marginTop: '10px'
-          },
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Remove', 'imperiosur')
-        })))
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaUploadCheck, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaUpload, {
-          onSelect: onSelectImage,
-          allowedTypes: ['image'],
-          render: ({
-            open
-          }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
-            onClick: open,
-            variant: "primary",
-            style: {
-              marginTop: '20px'
-            },
-            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Add Image', 'imperiosur')
-          })
-        })
-      })]
-    })
+  const updateImageLink = (index, newLink) => {
+    setAttributes({
+      images: images.map((img, i) => i === index ? {
+        ...img,
+        link: newLink
+      } : img)
+    });
+  };
+  const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)(); // Se define una sola vez
 
-    //aca luego podriamos agregar botones y lo que sea para que sea mas facil 
-    //trabajar con la interfas grafica de wordpress, 
-  );
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    ...blockProps,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+      children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('BANNER QUE OCUPA EL 100% DEL ANCHO', 'imperiosur')
+    }), images.map((image, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      style: {
+        marginBottom: '20px'
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+        src: image.url,
+        style: {
+          width: '100%',
+          maxHeight: '300px',
+          objectFit: 'cover'
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Link', 'imperiosur'),
+        value: image.link,
+        onChange: newLink => updateImageLink(index, newLink)
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+        isDestructive: true,
+        onClick: () => removeImage(index),
+        style: {
+          marginTop: '10px'
+        },
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Remove', 'imperiosur')
+      })]
+    }, index)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaUploadCheck, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaUpload, {
+        onSelect: onSelectImage,
+        allowedTypes: ['image'],
+        render: ({
+          open
+        }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+          onClick: open,
+          variant: "primary",
+          style: {
+            marginTop: '20px'
+          },
+          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Add Image', 'imperiosur')
+        })
+      })
+    })]
+  });
 }
 
 /***/ }),
@@ -163,16 +156,6 @@ const ISLogo = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.js
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
-
-/***/ }),
-
-/***/ "react":
-/*!************************!*\
-  !*** external "React" ***!
-  \************************/
-/***/ ((module) => {
-
-module.exports = window["React"];
 
 /***/ }),
 
