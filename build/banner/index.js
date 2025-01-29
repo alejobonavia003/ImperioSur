@@ -215,7 +215,7 @@ module.exports = window["wp"]["i18n"];
   \*******************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":2,"name":"imperiosur/banner","title":"banner 100%","category":"widgets","description":"banner que ocupa el 100% del ancho de la pantalla.","render":"file:./render.php","attributes":{"images":{"type":"array","default":[{"url":"https://bellarosatta.com/wp-content/uploads/2025/01/D_Q_NP_881108-MLA81635198923_122024-F00.jpg-G.webp","link":"https://bellarosatta.com/"}],"items":{"type":"object","properties":{"url":{"type":"string"},"link":{"type":"string"}}}}},"editorScript":"file:./index.js","style":"file:./style.scss"}');
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":2,"name":"imperiosur/banner","title":"banner 100%","category":"widgets","description":"banner que ocupa el 100% del ancho de la pantalla.","render":"file:./render.php","attributes":{"images":{"type":"array","default":[{"url":"https://imperiosur.com/wp-content/uploads/2025/01/constitucion-971.png","link":"https://imperiosur.com/"}],"items":{"type":"object","properties":{"url":{"type":"string"},"link":{"type":"string"}}}}},"editorScript":"file:./index.js","style":"file:./style.scss"}');
 
 /***/ })
 
