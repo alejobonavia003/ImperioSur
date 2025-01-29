@@ -79,7 +79,9 @@
   <!-- Contenedor de imágenes del carrusel -->
   <div class="carousel-images" id="carouselImages">
   <?php for ($i = 0; $i < count($attributes['images']); $i++) { ?>  
-    <img src="<?php echo ($attributes['images'][$i]['url'] ? $attributes['images'][$i]['url'] : null) ?>" alt="<?php ($attributes['images'][0]['alt'] ? $attributes['images'][0]['alt'] : null) ?>">
+    <img 
+    src="<?php echo ($attributes['images'][$i]['url'] ? $attributes['images'][$i]['url'] : null) ?>" 
+    href="<?php ($attributes['images'][0]['link'] ? $attributes['images'][0]['link'] : null) ?>">
     <?php } ?>
   </div>
 
