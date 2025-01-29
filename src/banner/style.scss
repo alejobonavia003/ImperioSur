@@ -1,16 +1,13 @@
-/*!***********************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/ofertas/style.scss ***!
-  \***********************************************************************************************************************************************************************************************************************************************/
-@charset "UTF-8";
+
 @media screen and (max-width: 868px) {
   .circle-container {
     overflow: auto;
     white-space: nowrap;
     width: 100%;
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-  .circle {
+    margin-top: 30px!important;
+    margin-bottom: 30px!important;
+}
+.circle {
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -18,25 +15,30 @@
     position: relative;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: inline-block;
-  }
+}
+
   .circle span {
     font-size: 10px; /* Ajusta el tamaño del texto si es necesario */
   }
 }
 @media screen and (min-width: 868px) {
-  .circle-container {
+
+.circle-container {
     /* overflow: auto; */
     /* white-space: nowrap; */
     width: 100%;
-    display: flex;
+    display: flex
+;
     gap: 20px;
     align-items: center;
     justify-content: center;
-    margin-top: 15px;
-    margin-bottom: 15px;
-  }
-  /* Estilo de cada círculo */
-  .circle {
+    margin-top: 45px!important;
+    margin-bottom: 45px!important;
+}
+
+
+/* Estilo de cada círculo */
+.circle {
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -44,10 +46,11 @@
     position: relative;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     /* display: inline-block; */
-  }
+}
+
 }
 ::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 .circle:hover {
@@ -58,8 +61,7 @@
 .circle img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 
@@ -67,8 +69,8 @@
 .circle span {
   position: absolute;
   bottom: 10px;
-  right: 50%;
-  transform: translateX(50%);
+  left: 50%;
+  transform: translateX(-50%);
   background-color: rgba(0, 0, 0, 0.6);
   color: #fff;
   padding: 5px 10px;

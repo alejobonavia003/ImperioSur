@@ -2,10 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/Bloque-nuevo/edit.js":
-/*!**********************************!*\
-  !*** ./src/Bloque-nuevo/edit.js ***!
-  \**********************************/
+/***/ "./src/banner/edit.js":
+/*!****************************!*\
+  !*** ./src/banner/edit.js ***!
+  \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -16,7 +16,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./editor.scss */ "./src/Bloque-nuevo/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./editor.scss */ "./src/banner/editor.scss");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
@@ -62,7 +62,7 @@ function Edit({
     //esto lo que hace es adaptarlo a la interfas grafica que nos da wordpress para trabajar VERGA
     (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       ...blockProps,
-      children: [(0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('CIRCULOS DE CATEGORIAS', 'imperiosur'), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      children: [(0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('BANNER QUE OCUPA EL 100% DEL ANCHO', 'imperiosur'), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)({
           className: 'circle-container'
         }),
@@ -117,18 +117,18 @@ function Edit({
 
 /***/ }),
 
-/***/ "./src/Bloque-nuevo/index.js":
-/*!***********************************!*\
-  !*** ./src/Bloque-nuevo/index.js ***!
-  \***********************************/
+/***/ "./src/banner/index.js":
+/*!*****************************!*\
+  !*** ./src/banner/index.js ***!
+  \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/Bloque-nuevo/style.scss");
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/Bloque-nuevo/edit.js");
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./block.json */ "./src/Bloque-nuevo/block.json");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/banner/style.scss");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/banner/edit.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./block.json */ "./src/banner/block.json");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
 
@@ -162,10 +162,10 @@ const ISLogo = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.js
 
 /***/ }),
 
-/***/ "./src/Bloque-nuevo/editor.scss":
-/*!**************************************!*\
-  !*** ./src/Bloque-nuevo/editor.scss ***!
-  \**************************************/
+/***/ "./src/banner/editor.scss":
+/*!********************************!*\
+  !*** ./src/banner/editor.scss ***!
+  \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -174,10 +174,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/Bloque-nuevo/style.scss":
-/*!*************************************!*\
-  !*** ./src/Bloque-nuevo/style.scss ***!
-  \*************************************/
+/***/ "./src/banner/style.scss":
+/*!*******************************!*\
+  !*** ./src/banner/style.scss ***!
+  \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -246,13 +246,13 @@ module.exports = window["wp"]["i18n"];
 
 /***/ }),
 
-/***/ "./src/Bloque-nuevo/block.json":
-/*!*************************************!*\
-  !*** ./src/Bloque-nuevo/block.json ***!
-  \*************************************/
+/***/ "./src/banner/block.json":
+/*!*******************************!*\
+  !*** ./src/banner/block.json ***!
+  \*******************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":2,"name":"imperiosur/nuevo-bloque","title":"deslizador de imágenes","category":"widgets","icon":"smiley","description":"Un nuevo bloque dinámico para tu plugin.","render":"file:./render.php","render_callback":"render_bloque_dinamico","attributes":{"images":{"type":"array","default":[{"url":"https://bellarosatta.com/wp-content/uploads/2025/01/D_Q_NP_881108-MLA81635198923_122024-F00.jpg-G.webp","alt":"Mujers","link":"https://bellarosatta.com/"}],"items":{"type":"object","properties":{"url":{"type":"string"},"alt":{"type":"string"},"link":{"type":"string"}}}}},"editorScript":"file:./index.js","style":"file:./style.scss"}');
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":2,"name":"imperiosur/nuevo-bloque","title":"banner 100%","category":"widgets","icon":"smiley","description":"banner que ocupa el 100% del ancho de la pantalla.","render":"file:./render.php","render_callback":"render_bloque_dinamico","attributes":{"images":{"type":"array","default":[{"url":"https://bellarosatta.com/wp-content/uploads/2025/01/D_Q_NP_881108-MLA81635198923_122024-F00.jpg-G.webp","link":"https://bellarosatta.com/"}],"items":{"type":"object","properties":{"url":{"type":"string"},"link":{"type":"string"}}}}},"editorScript":"file:./index.js","style":"file:./style.scss"}');
 
 /***/ })
 
@@ -366,8 +366,8 @@ module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":2,"name":"imperiosur/nue
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"Bloque-nuevo/index": 0,
-/******/ 			"Bloque-nuevo/style-index": 0
+/******/ 			"banner/index": 0,
+/******/ 			"banner/style-index": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -417,7 +417,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":2,"name":"imperiosur/nue
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["Bloque-nuevo/style-index"], () => (__webpack_require__("./src/Bloque-nuevo/index.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["banner/style-index"], () => (__webpack_require__("./src/banner/index.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

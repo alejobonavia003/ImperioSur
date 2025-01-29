@@ -1,14 +1,14 @@
-/*!***********************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/ofertas/style.scss ***!
-  \***********************************************************************************************************************************************************************************************************************************************/
+/*!**********************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/banner/style.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************/
 @charset "UTF-8";
 @media screen and (max-width: 868px) {
   .circle-container {
     overflow: auto;
     white-space: nowrap;
     width: 100%;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
   }
   .circle {
     width: 70px;
@@ -32,8 +32,8 @@
     gap: 20px;
     align-items: center;
     justify-content: center;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 45px !important;
+    margin-bottom: 45px !important;
   }
   /* Estilo de cada círculo */
   .circle {
@@ -67,8 +67,8 @@
 .circle span {
   position: absolute;
   bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 50%;
+  transform: translateX(50%);
   background-color: rgba(0, 0, 0, 0.6);
   color: #fff;
   padding: 5px 10px;
@@ -77,5 +77,3 @@
   font-weight: bold;
   white-space: nowrap;
 }
-
-/*# sourceMappingURL=style-index.css.map*/

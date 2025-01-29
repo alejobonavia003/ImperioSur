@@ -23,7 +23,7 @@ export default function Edit({ attributes, setAttributes }) {
         
         
         <div {...blockProps} >
-            {__('CIRCULOS DE CATEGORIAS', 'imperiosur')}
+            {__('BANNER QUE OCUPA EL 100% DEL ANCHO', 'imperiosur')}
             <div {...useBlockProps({className:'circle-container',})}>
                 {images.map((image, index) => (
                      <div  {...useBlockProps({className:'circle',})} key={index}>

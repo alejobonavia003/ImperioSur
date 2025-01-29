@@ -28,6 +28,7 @@ function create_block_imperiosur_block_init() {
 	register_block_type( __DIR__ . '/build/imperiosur' );
     register_block_type( __DIR__ . '/build/copyrigth' );
     register_block_type( __DIR__ . '/build/ofertas' );
+    register_block_type( __DIR__ . '/build/banner' );
 
 	    // Registrar el nuevo bloque
 	    $plugin = __DIR__ . '/build/Bloque-nuevo';
