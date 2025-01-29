@@ -15,7 +15,7 @@
   display: flex;
   transition: transform 0.5s ease-in-out;
   width: 100%;
-  overflow: hidden; /* Evita que se vean las demás imágenes */
+  overflow: visible; /* Evita que se vean las demás imágenes */
 }
 
 .carousel-images a {
