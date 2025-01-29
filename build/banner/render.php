@@ -90,8 +90,6 @@
   <div class="carousel-indicators" id="carouselIndicators">
   <?php for ($i = 0; $i < count($attributes['images']); $i++) { ?>  
     <button data-index=" <?php $i ?>" class="active"></button>
-    <button data-index="<?php $i ?>"></button>
-    <button data-index="<?php $i ?>"></button>
     <?php } ?>
   </div>
 </div>
