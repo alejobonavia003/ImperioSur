@@ -20,7 +20,6 @@
 
 .carousel-images a {
   min-width: 100%; /* Cada imagen ocupará el 100% del contenedor */
-  flex-shrink: 0;
 }
 
 .carousel-images img {
