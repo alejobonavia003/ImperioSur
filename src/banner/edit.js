@@ -1,6 +1,5 @@
 import { __ } from '@wordpress/i18n';
 import { useBlockProps, MediaUpload, MediaUploadCheck  } from '@wordpress/block-editor';
-import './editor.scss';
 import { Button, TextControl } from '@wordpress/components';
 
 //basicamente dentro del edit trabajamos la interfas que vemos dentro de wordpress
@@ -8,7 +7,7 @@ export default function Edit({ attributes, setAttributes }) {
     const {images = []} = attributes;
     const onSelectImage = (newImage) => {
         setAttributes({
-            images: [...images, { url: newImage.url, alt: newImage.alt, link: newImage.link }],
+            images: [...images, { url: newImage.url,  link: newImage.link }],
         });
     };
     const removeImage = (indexToRemove) => {
@@ -24,12 +23,12 @@ export default function Edit({ attributes, setAttributes }) {
         
         <div {...blockProps} >
             {__('BANNER QUE OCUPA EL 100% DEL ANCHO', 'imperiosur')}
-            <div {...useBlockProps({className:'circle-container',})}>
+            <div {...useBlockProps()}>
                 {images.map((image, index) => (
-                     <div  {...useBlockProps({className:'circle',})} key={index}>
-                        <img src={image.url} alt={image.alt} />
+                     <div  {...useBlockProps()} key={index}>
+                        <img src={image.url} />
                         <TextControl
-                            label={__('Link', 'text-domain')}
+                            label={__('Link', 'imperiosur')}
                             value={image.link}
                             onChange={(newLink) => {
                                 const newImages = [...images];
@@ -41,7 +40,7 @@ export default function Edit({ attributes, setAttributes }) {
                             onClick={() => removeImage(index)}
                             style={{ marginTop: '10px' }}
                         >
-                            {__('Remove', 'text-domain')}
+                            {__('Remove', 'imperiosur')}
                         </Button>
                     </div>
                 ))}
@@ -58,7 +57,7 @@ export default function Edit({ attributes, setAttributes }) {
                             variant="primary"
                             style={{ marginTop: '20px' }}
                         >
-                            {__('Add Image', 'text-domain')}
+                            {__('Add Image', 'imperiosur')}
                         </Button>
                     )}
                 />
