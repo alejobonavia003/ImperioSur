@@ -19,7 +19,8 @@
 
 .carousel-images img {
   width: 100%;
-  flex-shrink: 0;
+  height: 100vh; /* Ajusta la altura al 100% de la ventana */
+  object-fit: cover; /* Hace que la imagen cubra todo el espacio sin dejar márgenes */
 }
 
 /* Botones de navegación */
