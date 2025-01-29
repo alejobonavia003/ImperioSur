@@ -7,7 +7,7 @@
   position: relative;
   width: 100%;
   margin: 0;
-  overflow: hidden;
+  overflow: visible;
   padding: 0;
 }
 
@@ -19,8 +19,7 @@
 
 .carousel-images img {
   width: 100%;
-  height: 100vh; /* Ajusta la altura al 100% de la ventana */
-  object-fit: cover; /* Hace que la imagen cubra todo el espacio sin dejar márgenes */
+  flex-shrink: 0;
 }
 
 /* Botones de navegación */
