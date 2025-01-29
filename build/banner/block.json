@@ -1,12 +1,10 @@
 {
   "apiVersion": 2,
-  "name": "imperiosur/nuevo-bloque",
+  "name": "imperiosur/banner",
   "title": "banner 100%",
   "category": "widgets",
-  "icon": "smiley",
   "description": "banner que ocupa el 100% del ancho de la pantalla.",
   "render": "file:./render.php",
-  "render_callback": "render_bloque_dinamico",
   "attributes": {
     "images": {
       "type": "array",

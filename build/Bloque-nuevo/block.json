@@ -3,7 +3,6 @@
   "name": "imperiosur/nuevo-bloque",
   "title": "deslizador de imágenes",
   "category": "widgets",
-  "icon": "smiley",
   "description": "Un nuevo bloque dinámico para tu plugin.",
   "render": "file:./render.php",
   "render_callback": "render_bloque_dinamico",
