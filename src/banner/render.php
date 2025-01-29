@@ -79,25 +79,11 @@
   <!-- Contenedor de imágenes del carrusel -->
   <div class="carousel-images" id="carouselImages">
   <?php for ($i = 0; $i < count($attributes['images']); $i++) { ?>  
-    <a href="<?php echo ($attributes['images'][$i]['link'] ? $attributes['images'][$i]['link'] : null) ?>">
+    <a href="<?php echo ($attributes['images'][$i]['link'] ? $attributes['images'][$i]['link'] : null) ?>" class="carousel-image">
       <img src="<?php echo ($attributes['images'][$i]['url'] ? $attributes['images'][$i]['url'] : null) ?>" >
     </a>
     <?php } ?>
   </div>
-
-  <div class="carousel">
-  <!-- Contenedor de imágenes del carrusel -->
-  <div class="carousel-images" id="carouselImages">
-  <?php for ($i = 0; $i < count($attributes['images']); $i++) { 
-    $url = isset($attributes['images'][$i]['url']) ? $attributes['images'][$i]['url'] : '';
-    $link = isset($attributes['images'][$i]['link']) ? $attributes['images'][$i]['link'] : '#'; // Usa "#" si no hay link
-  ?>
-    <a href="<?php echo esc_url($link); ?>" target="_blank">
-      <img src="<?php echo esc_url($url); ?>" alt="Imagen <?php echo $i; ?>">
-    </a>
-  <?php } ?>
-  </div>
-</div>
 
 
   <!-- Botones de navegación -->
