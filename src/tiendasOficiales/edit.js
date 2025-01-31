@@ -18,6 +18,7 @@ export default function Edit({ attributes, setAttributes }) {
     
     return (
         <div { ...useBlockProps() }>
+			<p>AQUI HAY UN GENERADOR DE TIENDAS OFICIALES</p>
             <InspectorControls>
                 <PanelBody title="Opciones de Tienda" initialOpen={true}>
                     <ToggleControl
