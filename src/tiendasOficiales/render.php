@@ -56,4 +56,5 @@ function render_tiendas_oficiales($attributes) {
     echo '</div>';
     return ob_get_clean();
 }
+render_tiendas_oficiales($attributes);
 ?>
