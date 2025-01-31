@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Imperiosur
  * Description:       Example block scaffolded with Create Block tool.
- * Version:           0.1.0
+ * Version:           6.1.0
  * Requires at least: 6.7
  * Requires PHP:      7.4
  * Author:            The WordPress Contributors
@@ -29,6 +29,7 @@ function create_block_imperiosur_block_init() {
     register_block_type( __DIR__ . '/build/copyrigth' );
     register_block_type( __DIR__ . '/build/ofertas' );
     register_block_type( __DIR__ . '/build/banner' );
+    register_block_type( __DIR__ . '/build/tiendasOficiales' );
 
 	    // Registrar el nuevo bloque
 	    $plugin = __DIR__ . '/build/Bloque-nuevo';

@@ -1,57 +1,54 @@
 === Imperiosur ===
-Contributors:      The WordPress Contributors
-Tags:              block
-Tested up to:      6.7
-Stable tag:        0.1.0
-License:           GPL-2.0-or-later
-License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+Contribuyentes:     Los Contribuyentes de WordPress
+Etiquetas:          bloque
+Probado hasta:      6.7
+Etiqueta estable:   6.0.0
+Licencia:           GPL-2.0-o-later
+URI de licencia:    https://www.gnu.org/licenses/gpl-2.0.html
 
-Example block scaffolded with Create Block tool.
+Ejemplo de bloque creado con la herramienta Crear Bloque.
 
-== Description ==
+== Descripción ==
 
-This is the long description. No limit, and you can use Markdown (as well as in the following sections).
+Esta es la descripción larga. Sin límite, y puedes usar Markdown (al igual que en las siguientes secciones).
 
-For backwards compatibility, if this section is missing, the full length of the short description will be used, and
-Markdown parsed.
+Para compatibilidad hacia atrás, si esta sección falta, se utilizará la longitud completa de la descripción corta, y
+se procesará Markdown.
 
-== Installation ==
+== Instalación ==
 
-This section describes how to install the plugin and get it working.
+Esta sección describe cómo instalar el plugin y hacerlo funcionar.
 
-e.g.
+ejemplo:
 
-1. Upload the plugin files to the `/wp-content/plugins/imperiosur` directory, or install the plugin through the WordPress plugins screen directly.
-1. Activate the plugin through the 'Plugins' screen in WordPress
+1. Sube los archivos del plugin al directorio `/wp-content/plugins/imperiosur`, o instala el plugin a través de la pantalla de plugins de WordPress directamente.
+2. Activa el plugin a través de la pantalla de 'Plugins' en WordPress.
 
+== Preguntas Frecuentes ==
 
-== Frequently Asked Questions ==
+= Una pregunta que alguien podría tener =
 
-= A question that someone might have =
+Una respuesta a esa pregunta.
 
-An answer to that question.
+= ¿Qué pasa con foo bar? =
 
-= What about foo bar? =
+Respuesta al dilema de foo bar.
 
-Answer to foo bar dilemma.
+== Capturas de pantalla ==
 
-== Screenshots ==
+1. Esta descripción de captura de pantalla corresponde a screenshot-1.(png|jpg|jpeg|gif). Ten en cuenta que la captura de pantalla se toma de
+el directorio /assets o del directorio que contiene el readme.txt estable (etiquetas o trunk). Las capturas de pantalla en el directorio /assets
+tienen prioridad. Por ejemplo, `/assets/screenshot-1.png` ganaría sobre `/tags/4.3/screenshot-1.png`
+(o jpg, jpeg, gif).
+2. Esta es la segunda captura de pantalla.
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png`
-(or jpg, jpeg, gif).
-2. This is the second screen shot
+== Registro de cambios ==
 
-== Changelog ==
+= 6.0.0 =
+* Lanzamiento
 
-= 0.1.0 =
-* Release
+== Sección arbitraria ==
 
-== Arbitrary section ==
-
-You may provide arbitrary sections, in the same format as the ones above. This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation." Arbitrary sections will be shown below the built-in sections outlined above.
-
-
+Puedes proporcionar secciones arbitrarias, en el mismo formato que las anteriores. Esto puede ser útil para plugins extremadamente complicados
+donde se necesita transmitir más información que no encaja en las categorías de "descripción" o
+"instalación." Las secciones arbitrarias se mostrarán debajo de las secciones integradas descritas anteriormente.
