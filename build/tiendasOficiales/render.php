@@ -1,5 +1,5 @@
 
-    function render_tiendas_oficiales( $attributes ) {
+   // function render_tiendas_oficiales( $attributes ) {
         $useAutomatic      = $attributes['useAutomatic'] ?? true;
         $customTitle       = $attributes['customTitle'] ?? '';
         $customDescription = $attributes['customDescription'] ?? '';
@@ -45,6 +45,6 @@
             <?php
         }
         echo '</div>';
-        return ob_get_clean();
-    }
+   //     return ob_get_clean();
+   // }
 
