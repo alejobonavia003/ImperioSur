@@ -1,46 +1,73 @@
 <?php
-$useAutomatic      = $attributes['useAutomatic'] ?? true;
-$customTitle       = $attributes['customTitle'] ?? '';
-$customDescription = $attributes['customDescription'] ?? '';
-$customLogo        = $attributes['customLogo'] ?? '';
+/**
+ * Plugin Name:       Imperiosur
+ * Description:       Example block scaffolded with Create Block tool.
+ * Version:           6.1.0
+ * Requires at least: 6.7
+ * Requires PHP:      7.4
+ * Author:            The WordPress Contributors
+ * License:           GPL-2.0-or-later
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain:       imperiosur
+ *
+ * @package CreateBlock
+ */
 
-if ( $useAutomatic ) {
-    $brands = get_terms( array(
-        'taxonomy'   => 'product_brand',
-        'hide_empty' => false,
-    ) );
-} else {
-    $brands = [
-        (object) [
-            'name'        => $customTitle,
-            'description' => $customDescription,
-            'slug'        => sanitize_title( $customTitle ),
-            'logo'        => $customLogo
-        ]
-    ];
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
 }
 
-if ( empty( $brands ) ) {
-    echo '<p>No hay tiendas oficiales registradas.</p>';
-    return;
+/**
+ * Registers the block using the metadata loaded from the `block.json` file.
+ * Behind the scenes, it registers also all assets so they can be enqueued
+ * through the block editor in the corresponding context.
+ *
+ * @see https://developer.wordpress.org/reference/functions/register_block_type/
+ */
+function create_block_imperiosur_block_init() {
+	register_block_type( __DIR__ . '/build/imperiosur' );
+    register_block_type( __DIR__ . '/build/copyrigth' );
+    register_block_type( __DIR__ . '/build/ofertas' );
+    register_block_type( __DIR__ . '/build/banner' );
+    register_block_type( __DIR__ . '/build/tiendasOficiales' );
+
+	    // Registrar el nuevo bloque
+	    $plugin = __DIR__ . '/build/Bloque-nuevo';
+	    $data = __DIR__ . '/block.json';
+
+		register_block_type($plugin, (array) json_decode(stripslashes($data)));
+        
 }
+add_action( 'init', 'create_block_imperiosur_block_init' );
 
-?>
+/**
+ * Enqueue block styles for front-end.
+ */
+function enqueue_block_styles() {
+    wp_enqueue_style(
+        'bloque-nuevo-style',
+        plugins_url('build/Bloque-nuevo/style-index.css', __FILE__),
+        array(),
+        filemtime(plugin_dir_path(__FILE__) . 'build/Bloque-nuevo/style-index.css')
+    );
+}
+add_action('wp_enqueue_scripts', 'enqueue_block_styles');
 
-<div class="tiendas-container" style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
-    <?php foreach ( $brands as $brand ) :
-        $brand_logo = $useAutomatic ? get_term_meta( $brand->term_id, 'brand_logo', true ) : $brand->logo;
-        $brand_url  = home_url( '/marca/' . $brand->slug );
-    ?>
-        <div class="tienda-oficial" style="width: 80%; max-width: 800px; background: white; padding: 20px; box-shadow: 0px 4px 10px rgba(0,0,0,0.1); border-radius: 10px; transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; align-items: center; text-align: center;">
-            <div class="tienda-header" style="display: flex; align-items: center; gap: 20px;">
-                <?php if ( $brand_logo ) : ?>
-                    <img src="<?php echo esc_url( $brand_logo ); ?>" alt="<?php echo esc_attr( $brand->name ); ?>" style="width: 80px; height: auto;">
-                <?php endif; ?>
-                <h2 style="margin: 0; flex-grow: 1; font-size: 24px;"><?php echo esc_html( $brand->name ); ?></h2>
-            </div>
-            <p style="margin-top: 10px; color: #666;"><?php echo esc_html( $brand->description ); ?></p>
-            <a href="<?php echo esc_url( $brand_url ); ?>" class="tienda-boton" style="display: inline-block; margin-top: 15px; padding: 10px 20px; background: #0073aa; color: white; text-decoration: none; border-radius: 5px; transition: background 0.3s;">Ver Tienda</a>
-        </div>
-    <?php endforeach; ?>
-</div>
+
+function registrar_bloque_dinamico() {
+    // Ruta al archivo block.json
+    $block_path = __DIR__ . '/block.json';
+
+    // Verifica si el archivo block.json existe
+    if ( file_exists( $block_path ) ) {
+        // Registra el bloque dinámico y asigna la función de renderizado
+        register_block_type( $block_path, [
+            'render_callback' => 'render_bloque_dinamico', // Aquí se vincula la función
+        ]);
+    }
+}
+add_action( 'init', 'registrar_bloque_dinamico' );
+
+
+
+
