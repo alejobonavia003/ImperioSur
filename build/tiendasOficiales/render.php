@@ -29,10 +29,9 @@ if ( empty( $brands ) ) {
 
 <div class="tiendas-container" style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
     <?php foreach ( $brands as $brand ) :
-$meta_value = get_term_meta( $brand->term_id, 'brand_logo', true );
-error_log("Meta value: " . print_r($meta_value, true));
-
-echo "<script>console.log(" . json_encode('logo: ' . $meta_value) . ");</script>";
+$meta_value = get_term_meta( $brand->term_id, 'thumbnail_id', true );
+error_log("Term ID: " . $brand->term_id);
+error_log("Meta value (thumbnail_id): " . print_r($meta_value, true));
 
 $brand_logo = $useAutomatic ? wp_get_attachment_url( $meta_value ) : $brand->logo;
 error_log("Brand logo URL: " . $brand_logo);
