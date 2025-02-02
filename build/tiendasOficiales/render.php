@@ -29,11 +29,16 @@ if ( empty( $brands ) ) {
 
 <div class="tiendas-container" style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
     <?php foreach ( $brands as $brand ) :
-        $brand_logo = $useAutomatic 
-        ? wp_get_attachment_url( get_term_meta( $brand->term_id, 'brand_logo', true ) )
-        : $brand->logo;
-    
-        echo "<script>console.log('logo: " . ($brand_logo) . "');</script>";
+$meta_value = get_term_meta( $brand->term_id, 'brand_logo', true );
+error_log("Meta value: " . print_r($meta_value, true));
+
+echo "<script>console.log(" . json_encode('logo: ' . $meta_value) . ");</script>";
+
+$brand_logo = $useAutomatic ? wp_get_attachment_url( $meta_value ) : $brand->logo;
+error_log("Brand logo URL: " . $brand_logo);
+
+echo "<script>console.log(" . json_encode('logo: ' . $brand_logo) . ");</script>";
+
         
         $brand_url  = home_url( '/marca/' . $brand->slug );
     ?>
