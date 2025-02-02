@@ -33,6 +33,8 @@ if ( empty( $brands ) ) {
         ? wp_get_attachment_url( get_term_meta( $brand->term_id, 'brand_logo', true ) )
         : $brand->logo;
     
+        echo "<script>console.log('logo: " . ($brand_logo) . "');</script>";
+        
         $brand_url  = home_url( '/marca/' . $brand->slug );
     ?>
         <div class="tienda-oficial" style="width: 80%; max-width: 800px; background: white; padding: 20px; box-shadow: 0px 4px 10px rgba(0,0,0,0.1); border-radius: 10px; transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; align-items: center; text-align: center;">
