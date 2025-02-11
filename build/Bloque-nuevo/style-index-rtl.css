@@ -75,5 +75,5 @@
   border-radius: 10px;
   font-size: 12px;
   font-weight: bold;
-  white-space: nowrap;
+  white-space: pre-wrap;
 }
