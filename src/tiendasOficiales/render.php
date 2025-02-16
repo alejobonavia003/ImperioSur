@@ -54,4 +54,5 @@ echo "<script>console.log(" . json_encode('logo: ' . $brand_logo) . ");</script>
     <?php endforeach; ?>
 </div>
 
-<?php echo phpinfo(); ?>
+<?php // echo phpinfo();
+ ?>
