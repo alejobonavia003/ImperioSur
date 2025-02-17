@@ -18,14 +18,15 @@ echo '<style>
 
     /* Tarjeta individual: se comporta como un contenedor flexible en columna */
     .servicio-card {
-        display: flex;
-        flex-direction: column;
-        background: #fff;
-        border-radius: 10px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        text-align: center;
-        transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: row;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.2sease;
+    flex-wrap: wrap;
     }
 
     /* Pequeño efecto hover */
