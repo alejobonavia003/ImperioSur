@@ -1,0 +1,15 @@
+{
+  "apiVersion": 2,
+  "name": "custom/servicios",
+  "title": "Servicios",
+  "category": "widgets",
+  "description": "Permite listar servicios con contacto a WhatsApp.",
+  "attributes": {
+    "servicios": {
+      "type": "array",
+      "default": []
+    }
+  },
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php"
+}
