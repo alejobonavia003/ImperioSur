@@ -1,0 +1,18 @@
+{
+  "apiVersion": 2,
+  "name": "revendedores-autos/tarjeta-auto",
+  "title": "Tarjeta de Auto",
+  "category": "widgets",
+  "description": "Permite listar vehículos con contacto directo al vendedor a través de WhatsApp.",
+  "attributes": {
+    "cards": {
+      "type": "array",
+      "default": []
+    }
+  },
+  "editorScript": "file:./index.js",
+  "script": "file:./script.js",
+  "editorStyle": "file:./editor.css",
+  "style": "file:./style.css",
+  "render": "file:./render.php"
+}

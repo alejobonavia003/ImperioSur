@@ -31,6 +31,7 @@ function create_block_imperiosur_block_init() {
     register_block_type( __DIR__ . '/build/banner' );
     register_block_type( __DIR__ . '/build/tiendasOficiales' );
     register_block_type( __DIR__ . '/build/servicios' );
+    register_block_type( __DIR__ . '/build/veiculos' );
 
 	    // Registrar el nuevo bloque
 	    $plugin = __DIR__ . '/build/Bloque-nuevo';
