@@ -1,16 +1,32 @@
 <?php
 
 echo '<style>
+
+.contenedor-tarjeta {
+    display: grid;
+    /* Espacio entre tarjetas */
+    gap: 16px;
+    /* Crea columnas que se autoajustan 
+       con un ancho mínimo y llenan el espacio disponible */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    /* Centra el grid en horizontal (opcional) */
+    justify-items: center;
+     max-width: 100% !important;
+}
+
 .tarjeta-auto {
+    display: flex;
+    flex-direction: column;
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     background: #fff;
+    /* Se adaptará al ancho de la columna, 
+       pero no excederá 300px */
+    width: 100%;
     max-width: 300px;
-    margin: 16px;
-    display: inline-block;
-    vertical-align: top;
+    /* No hace falta margin si usas gap */
 }
 .tarjeta-auto img {
     width: 100%;
@@ -35,6 +51,7 @@ echo '<style>
     text-decoration: none;
     border-radius: 4px;
     font-size: 1em;
+    margin-top: auto;
 }
 .boton-whatsapp:hover {
     background-color: #128c7e;
@@ -44,6 +61,10 @@ echo '<style>
 // Verificamos si el atributo 'cards' existe y es un array
 if ( ! empty( $attributes['cards'] ) && is_array( $attributes['cards'] ) ) {
 
+    // Creamos el contenedor de las tarjetas
+    ?>
+    <div class="contenedor-tarjeta">
+    <?php
     // Iteramos por cada tarjeta
     foreach ( $attributes['cards'] as $card ) {
 
@@ -75,7 +96,13 @@ if ( ! empty( $attributes['cards'] ) && is_array( $attributes['cards'] ) ) {
         </div>
         <?php
     }
+    ?>
+    </div>
+    <?php
+
 } else {
     // Opcional: mensaje en caso de que no haya tarjetas configuradas.
     echo '<p>No hay tarjetas disponibles.</p>';
 }
+
+
