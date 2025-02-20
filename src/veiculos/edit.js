@@ -1,4 +1,5 @@
 import { TextControl, Button, Card, CardBody, CardMedia } from '@wordpress/components';
+import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 
 export default function Edit(props) {
     const { attributes, setAttributes } = props;
@@ -13,7 +14,7 @@ export default function Edit(props) {
             precio: '',
             descripcion: '',
             whatsapp: '',
-            imagen: '',
+            imagenes: [], // Cambiamos 'imagen' por 'imagenes' para almacenar múltiples imágenes
         };
         setAttributes({ cards: [ ...cards, newCard ] });
     };
@@ -35,54 +36,73 @@ export default function Edit(props) {
         setAttributes({ cards: newCards });
     };
 
+    // Función para manejar la selección de imágenes
+    const onSelectImages = (index, newImages) => {
+        const newCards = cards.map((card, i) => {
+            if (i === index) {
+                return { ...card, imagenes: newImages };
+            }
+            return card;
+        });
+        setAttributes({ cards: newCards });
+    };
+
     return (
         <div>
             {cards.map((card, index) => (
                 <Card key={index} style={{ marginBottom: '20px' }}>
-                    { card.imagen && (
-                        <CardMedia>
-                            <img src={ card.imagen } alt="Auto" style={{ width: '100%', height: 'auto' }} />
-                        </CardMedia>
-                    )}
                     <CardBody>
+                        <MediaUploadCheck>
+                            <MediaUpload
+                                onSelect={(media) => onSelectImages(index, media.map(m => m.url))}
+                                allowedTypes={['image']}
+                                multiple={true}
+                                gallery={true}
+                                render={({ open }) => (
+                                    <Button onClick={open} isPrimary>
+                                        Seleccionar imágenes
+                                    </Button>
+                                )}
+                            />
+                        </MediaUploadCheck>
+                        {card.imagenes && card.imagenes.map((imagen, imgIndex) => (
+                            <CardMedia key={imgIndex}>
+                                <img src={imagen} alt={`Auto ${imgIndex}`} style={{ width: '100%', height: 'auto' }} />
+                            </CardMedia>
+                        ))}
                         <TextControl
                             label="Marca"
-                            value={ card.marca }
-                            onChange={ (value) => updateCard(index, 'marca', value) }
+                            value={card.marca}
+                            onChange={(value) => updateCard(index, 'marca', value)}
                         />
                         <TextControl
                             label="Modelo"
-                            value={ card.modelo }
-                            onChange={ (value) => updateCard(index, 'modelo', value) }
+                            value={card.modelo}
+                            onChange={(value) => updateCard(index, 'modelo', value)}
                         />
                         <TextControl
                             label="Año"
-                            value={ card.año }
-                            onChange={ (value) => updateCard(index, 'año', value) }
+                            value={card.año}
+                            onChange={(value) => updateCard(index, 'año', value)}
                         />
                         <TextControl
                             label="Precio"
-                            value={ card.precio }
-                            onChange={ (value) => updateCard(index, 'precio', value) }
+                            value={card.precio}
+                            onChange={(value) => updateCard(index, 'precio', value)}
                         />
                         <TextControl
                             label="Descripción"
-                            value={ card.descripcion }
-                            onChange={ (value) => updateCard(index, 'descripcion', value) }
+                            value={card.descripcion}
+                            onChange={(value) => updateCard(index, 'descripcion', value)}
                         />
                         <TextControl
                             label="WhatsApp del Revendedor"
-                            value={ card.whatsapp }
-                            onChange={ (value) => updateCard(index, 'whatsapp', value) }
-                        />
-                        <TextControl
-                            label="URL de la Imagen"
-                            value={ card.imagen }
-                            onChange={ (value) => updateCard(index, 'imagen', value) }
+                            value={card.whatsapp}
+                            onChange={(value) => updateCard(index, 'whatsapp', value)}
                         />
                         <Button 
                             isDestructive 
-                            onClick={ () => removeCard(index) }
+                            onClick={() => removeCard(index)}
                             style={{ marginTop: '10px' }}
                         >
                             Eliminar Tarjeta
@@ -92,7 +112,7 @@ export default function Edit(props) {
             ))}
             <Button 
                 isPrimary 
-                onClick={ addCard }
+                onClick={addCard}
             >
                 Agregar Tarjeta
             </Button>
