@@ -115,7 +115,7 @@ if (!empty($attributes['cards']) && is_array($attributes['cards'])) {
         $imagenes    = isset($card['imagenes']) ? $card['imagenes'] : array();
 
         // Creamos el mensaje predefinido para WhatsApp
-        $mensajeWhatsApp = rawurlencode("Hola, estoy interesado en el auto $marca $modelo.");
+        $mensajeWhatsApp = rawurlencode("Hola, estoy interesado en el veiculo $marca $modelo.");
         $urlWhatsApp     = "https://wa.me/$whatsapp?text=$mensajeWhatsApp";
 
         // Renderizamos la tarjeta
@@ -138,7 +138,7 @@ if (!empty($attributes['cards']) && is_array($attributes['cards'])) {
             <?php endif; ?>
             <h3><?php echo "$marca $modelo ($año)"; ?></h3>
             <p><?php echo $descripcion; ?></p>
-            <p><strong>Precio:</strong> <?php echo $precio; ?></p>
+            <p><strong>Vendedor:</strong> <?php echo $precio; ?></p>
             <a href="<?php echo $urlWhatsApp; ?>" target="_blank" rel="noopener noreferrer" class="boton-whatsapp">
                 Contactar por WhatsApp
             </a>
