@@ -1,5 +1,4 @@
 <?php
-
 echo '<style>
 .contenedor-tarjeta {
     display: grid;
@@ -8,7 +7,6 @@ echo '<style>
     justify-items: center;
     max-width: 100% !important;
 }
-
 .tarjeta-auto {
     display: flex;
     flex-direction: column;
@@ -19,32 +17,27 @@ echo '<style>
     background: #fff;
     width: 100%;
     max-width: 300px;
-    position: relative; /* Añadido para posicionar los botones correctamente */
+    position: relative;
 }
-
 .swiper-container {
     width: 100%;
-    height: 200px; /* Ajusta la altura según tus necesidades */
-    position: relative; /* Añadido para posicionar los botones correctamente */
+    height: 200px;
+    position: relative;
 }
-
 .swiper-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
 .tarjeta-auto h3 {
     margin: 16px;
     font-size: 1.5em;
 }
-
 .tarjeta-auto p {
     margin: 8px 16px;
     font-size: 1em;
     color: #555;
 }
-
 .boton-whatsapp {
     display: block;
     margin: 16px;
@@ -57,12 +50,9 @@ echo '<style>
     font-size: 1em;
     margin-top: auto;
 }
-
 .boton-whatsapp:hover {
     background-color: #128c7e;
 }
-
-/* Estilos para los botones de navegación */
 .swiper-button-next,
 .swiper-button-prev {
     position: absolute;
@@ -79,15 +69,12 @@ echo '<style>
     cursor: pointer;
     z-index: 10;
 }
-
 .swiper-button-next {
     right: 10px;
 }
-
 .swiper-button-prev {
     left: 10px;
 }
-
 .swiper-button-next::after,
 .swiper-button-prev::after {
     font-size: 16px;
@@ -114,11 +101,14 @@ if (!empty($attributes['cards']) && is_array($attributes['cards'])) {
         $whatsapp    = isset($card['whatsapp']) ? preg_replace('/\D/', '', $card['whatsapp']) : '';
         $imagenes    = isset($card['imagenes']) ? $card['imagenes'] : array();
 
-        // Creamos el mensaje predefinido para WhatsApp
-        $mensajeWhatsApp = rawurlencode("Hola, estoy interesado en el veiculo $marca $modelo.");
-        $urlWhatsApp     = "https://wa.me/$whatsapp?text=$mensajeWhatsApp";
+        // Verificamos si existe un mensaje personalizado, de lo contrario usamos un mensaje predeterminado
+        if (!empty($card['mensajePersonalizado'])) {
+            $mensajeWhatsApp = rawurlencode($card['mensajePersonalizado']);
+        } else {
+            $mensajeWhatsApp = rawurlencode("Hola, estoy interesado en el vehículo $marca $modelo.");
+        }
 
-        // Renderizamos la tarjeta
+        $urlWhatsApp = "https://wa.me/$whatsapp?text=$mensajeWhatsApp";
         ?>
         <div class="tarjeta-auto">
             <?php if (!empty($imagenes)) : ?>
@@ -130,7 +120,6 @@ if (!empty($attributes['cards']) && is_array($attributes['cards'])) {
                             </div>
                         <?php endforeach; ?>
                     </div>
-                    <!-- Agrega paginación y navegación -->
                     <div class="swiper-pagination"></div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
@@ -150,7 +139,6 @@ if (!empty($attributes['cards']) && is_array($attributes['cards'])) {
     <?php
 
 } else {
-    // Opcional: mensaje en caso de que no haya tarjetas configuradas.
     echo '<p>No hay tarjetas disponibles.</p>';
 }
 ?>
@@ -160,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Inicializar Swiper en cada contenedor
     document.querySelectorAll('.swiper-container').forEach(function (container) {
         new Swiper(container, {
-            loop: true, // Permite el bucle infinito
+            loop: true,
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,

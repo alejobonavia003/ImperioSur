@@ -14,7 +14,8 @@ export default function Edit(props) {
             precio: '',
             descripcion: '',
             whatsapp: '',
-            imagenes: [], // Cambiamos 'imagen' por 'imagenes' para almacenar múltiples imágenes
+            imagenes: [], // Para almacenar múltiples imágenes
+            mensajePersonalizado: '' // Nuevo campo para el mensaje de WhatsApp
         };
         setAttributes({ cards: [ ...cards, newCard ] });
     };
@@ -99,6 +100,13 @@ export default function Edit(props) {
                             label="WhatsApp del Revendedor"
                             value={card.whatsapp}
                             onChange={(value) => updateCard(index, 'whatsapp', value)}
+                        />
+                        {/* Nuevo campo para el mensaje personalizado */}
+                        <TextControl
+                            label="Mensaje personalizado para WhatsApp"
+                            help="Este mensaje se enviará al hacer clic en el botón, en lugar del mensaje predeterminado."
+                            value={card.mensajePersonalizado || ''}
+                            onChange={(value) => updateCard(index, 'mensajePersonalizado', value)}
                         />
                         <Button 
                             isDestructive 
