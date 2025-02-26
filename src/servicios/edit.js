@@ -4,6 +4,7 @@ import { TextControl, TextareaControl, Button } from '@wordpress/components';
 const Edit = ({ attributes, setAttributes }) => {
     const { servicios = [] } = attributes;
 
+    // Manejo de cambios en cada campo
     const onChangeServicio = (index, key, value) => {
         const nuevosServicios = servicios.map((servicio, i) =>
             i === index ? { ...servicio, [key]: value } : servicio
@@ -11,13 +12,15 @@ const Edit = ({ attributes, setAttributes }) => {
         setAttributes({ servicios: nuevosServicios });
     };
 
+    // Agregar un nuevo servicio con un campo extra: "mensaje"
     const onAddServicio = () => {
         const nuevoServicio = {
             imagen: '',
             titulo: '',
             prestador: '',
             descripcion: '',
-            whatsapp: ''
+            whatsapp: '',
+            mensaje: '' // Campo para el mensaje de WhatsApp
         };
         setAttributes({ servicios: [...servicios, nuevoServicio] });
     };
@@ -29,7 +32,7 @@ const Edit = ({ attributes, setAttributes }) => {
 
     return (
         <div { ...useBlockProps() }>
-                        <style>{`
+            <style>{`
                 .servicios-container {
                     display: flex;
                     flex-wrap: nowrap;
@@ -81,6 +84,7 @@ const Edit = ({ attributes, setAttributes }) => {
                     margin-top: 10px;
                 }
             `}</style>
+
             <div className="servicios-container">
                 {servicios.map((servicio, index) => (
                     <div className="servicio-card" key={index}>
@@ -122,6 +126,14 @@ const Edit = ({ attributes, setAttributes }) => {
                             label="Número de WhatsApp"
                             value={servicio.whatsapp}
                             onChange={(value) => onChangeServicio(index, 'whatsapp', value)}
+                        />
+
+                        {/** NUEVO CONTROL PARA MENSAJE PERSONALIZADO */}
+                        <TextareaControl
+                            label="Mensaje de WhatsApp"
+                            help="Mensaje predeterminado que se enviará al abrir WhatsApp."
+                            value={servicio.mensaje}
+                            onChange={(value) => onChangeServicio(index, 'mensaje', value)}
                         />
 
                         <Button isDestructive onClick={() => onRemoveServicio(index)}>

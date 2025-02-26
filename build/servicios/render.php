@@ -16,37 +16,34 @@ echo '<style>
         box-sizing: border-box;
     }
 
-    /* Tarjeta individual: se comporta como un contenedor flexible en columna */
+    /* Tarjeta individual */
     .servicio-card {
-    display: flex;
-    flex-direction: row;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    text-align: center;
-    transition: transform 0.2sease;
-    flex-wrap: wrap;
+        display: flex;
+        flex-direction: row;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        text-align: center;
+        transition: transform 0.2s ease;
+        flex-wrap: wrap;
     }
 
-    /* Pequeño efecto hover */
     .servicio-card:hover {
         transform: translateY(-2px);
     }
 
-    /* Imagen siempre arriba, ocupando todo el ancho */
     .servicio-imagen {
         width: 100%;
         height: auto;
         object-fit: cover;
     }
 
-    /* Contenido textual, que crece para empujar el botón al fondo */
     .servicio-content {
         display: flex;
         flex-direction: column;
-        justify-content: space-between; /* Deja el botón al final */
-        flex: 1;                       /* Ocupará el espacio vertical sobrante */
+        justify-content: space-between;
+        flex: 1;
         padding: 15px;
         box-sizing: border-box;
     }
@@ -68,7 +65,6 @@ echo '<style>
         margin: 5px 0;
     }
 
-    /* Botón de WhatsApp */
     .servicio-whatsapp {
         display: inline-block;
         background-color: #25D366;
@@ -91,33 +87,35 @@ $servicios = $block->attributes['servicios'] ?? [];
 
 <div <?php echo get_block_wrapper_attributes(); ?>>
     <div class="servicios-container">
-        <?php foreach ($servicios as $servicio) : ?>
+        <?php foreach ($servicios as $servicio) :
+            // Preparar datos de cada servicio
+            $titulo      = ! empty($servicio['titulo']) ? esc_html($servicio['titulo']) : '';
+            $prestador   = ! empty($servicio['prestador']) ? esc_html($servicio['prestador']) : '';
+            $descripcion = ! empty($servicio['descripcion']) ? esc_html($servicio['descripcion']) : '';
+            $imagen      = ! empty($servicio['imagen']) ? esc_url($servicio['imagen']) : '';
+            $whatsapp    = ! empty($servicio['whatsapp']) ? esc_attr($servicio['whatsapp']) : '';
+            $mensaje     = ! empty($servicio['mensaje']) ? urlencode($servicio['mensaje']) : '';
+        ?>
             <div class="servicio-card">
-                <?php if (!empty($servicio['imagen'])) : ?>
+                <?php if ($imagen) : ?>
                     <img 
-                        src="<?php echo esc_url($servicio['imagen']); ?>" 
-                        alt="<?php echo esc_attr($servicio['titulo']); ?>" 
+                        src="<?php echo $imagen; ?>" 
+                        alt="<?php echo $titulo; ?>" 
                         class="servicio-imagen" 
                     />
                 <?php endif; ?>
 
                 <div class="servicio-content">
                     <div>
-                        <h3 class="servicio-titulo">
-                            <?php echo esc_html($servicio['titulo']); ?>
-                        </h3>
-                        <p class="servicio-prestador">
-                            Por: <?php echo esc_html($servicio['prestador']); ?>
-                        </p>
-                        <p class="servicio-descripcion">
-                            <?php echo esc_html($servicio['descripcion']); ?>
-                        </p>
+                        <h3 class="servicio-titulo"><?php echo $titulo; ?></h3>
+                        <p class="servicio-prestador">Por: <?php echo $prestador; ?></p>
+                        <p class="servicio-descripcion"><?php echo $descripcion; ?></p>
                     </div>
 
-                    <?php if (!empty($servicio['whatsapp'])) : ?>
+                    <?php if ($whatsapp) : ?>
                         <a 
-                            href="https://wa.me/<?php echo esc_attr($servicio['whatsapp']); ?>" 
-                            class="servicio-whatsapp" 
+                            href="https://wa.me/<?php echo $whatsapp; ?><?php echo $mensaje ? '?text=' . $mensaje : ''; ?>"
+                            class="servicio-whatsapp"
                             target="_blank" 
                             rel="noopener noreferrer"
                         >
