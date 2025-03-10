@@ -1,0 +1,22 @@
+{
+  "apiVersion": 2,
+  "name": "revendedores-autos/tarjeta-autop-promocion",
+  "title": "Tarjeta de Auto en promoción",
+  "category": "widgets",
+  "description": "Bloque promocional para mostrar vehículos con diseño destacado",
+  "attributes": {
+    "tituloPromocion": {
+      "type": "string",
+      "default": "¡Ofertas Especiales!"
+    },
+    "cards": {
+      "type": "array",
+      "default": []
+    }
+  },
+  "editorScript": "file:./index.js",
+  "script": "file:./script.js",
+  "editorStyle": "file:./editor.css",
+  "style": "file:./style.css",
+  "render": "file:./render.php"
+}

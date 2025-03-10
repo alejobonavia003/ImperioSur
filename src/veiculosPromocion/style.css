@@ -1,0 +1,41 @@
+.tarjeta-auto {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    max-width: 300px;
+    margin: 16px;
+}
+
+.tarjeta-auto img {
+    width: 100%;
+    height: auto;
+}
+
+.tarjeta-auto h3 {
+    margin: 16px;
+    font-size: 1.5em;
+}
+
+.tarjeta-auto p {
+    margin: 8px 16px;
+    font-size: 1em;
+    color: #555;
+}
+
+.boton-whatsapp {
+    display: block;
+    margin: 16px;
+    padding: 10px 16px;
+    background-color: #25d366;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.boton-whatsapp:hover {
+    background-color: #128c7e;
+}
