@@ -82,4 +82,31 @@ function agregar_swiper() {
 add_action('wp_enqueue_scripts', 'agregar_swiper');
 
 
+// En mi-plugin.php (o el archivo principal de tu plugin)
+
+// Hook para usuarios autenticados y no autenticados
+add_action('wp_ajax_guardar_formulario', 'guardar_formulario');
+add_action('wp_ajax_nopriv_guardar_formulario', 'guardar_formulario');
+
+function guardar_formulario() {
+    global $wpdb;
+    $tabla = $wpdb->prefix . 'contactos_tarjetas';
+    $nombre = sanitize_text_field($_POST['nombre']);
+    $dni = sanitize_text_field($_POST['dni']);
+    $direccion = sanitize_text_field($_POST['direccion']);
+    $contacto = sanitize_text_field($_POST['contacto']);
+    $tarjeta_id = sanitize_text_field($_POST['tarjeta_id']);
+    
+    $wpdb->insert($tabla, array(
+         'nombre' => $nombre,
+         'dni' => $dni,
+         'direccion' => $direccion,
+         'contacto' => $contacto,
+         'tarjeta_id' => $tarjeta_id
+    ));
+    wp_die();
+}
+
+
+
 
