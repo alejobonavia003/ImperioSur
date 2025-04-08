@@ -82,19 +82,71 @@ echo '<style>
     font-size: 16px;
     font-weight: bold;
 }
+
+/* Nuevos estilos para el lightbox */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    /* Override WordPress layout constraints */
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.lightbox-swiper-container {
+    width: 80%;
+    height: 80%;
+    position: relative;
+}
+
+.lightbox-swiper-container .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-swiper-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1010;
+}
+
+.lightbox-swiper-container .swiper-button-next,
+.lightbox-swiper-container .swiper-button-prev {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.lightbox-swiper-container .swiper-button-next::after,
+.lightbox-swiper-container .swiper-button-prev::after {
+    font-size: 24px;
+}
 </style>';
 
-// Verificamos si el atributo \'cards\' existe y es un array
 if (!empty($attributes['cards']) && is_array($attributes['cards'])) {
-
-    // Creamos el contenedor de las tarjetas
     ?>
     <div class="contenedor-tarjeta">
     <?php
-    // Iteramos por cada tarjeta (usamos el índice para identificar la tarjeta)
     foreach ($attributes['cards'] as $index => $card) {
-
-        // Sanitizamos cada valor de la tarjeta
         $marca       = esc_html($card['marca'] ?? '');
         $modelo      = esc_html($card['modelo'] ?? '');
         $año         = esc_html($card['año'] ?? '');
@@ -103,7 +155,6 @@ if (!empty($attributes['cards']) && is_array($attributes['cards'])) {
         $whatsapp    = isset($card['whatsapp']) ? preg_replace('/\D/', '', $card['whatsapp']) : '';
         $imagenes    = isset($card['imagenes']) ? $card['imagenes'] : array();
 
-        // Verificamos si existe un mensaje personalizado, de lo contrario usamos un mensaje predeterminado
         if (!empty($card['mensajePersonalizado'])) {
             $mensajeWhatsApp = rawurlencode($card['mensajePersonalizado']);
         } else {
@@ -114,7 +165,7 @@ if (!empty($attributes['cards']) && is_array($attributes['cards'])) {
         ?>
         <div class="tarjeta-auto">
             <?php if (!empty($imagenes)) : ?>
-                <div class="swiper-container">
+                <div class="swiper-container" data-images="<?php echo htmlspecialchars(json_encode(array_map('esc_url', $imagenes)), ENT_QUOTES, 'UTF-8'); ?>">
                     <div class="swiper-wrapper">
                         <?php foreach ($imagenes as $imagen) : ?>
                             <div class="swiper-slide">
@@ -130,12 +181,21 @@ if (!empty($attributes['cards']) && is_array($attributes['cards'])) {
             <h3><?php echo "$marca $modelo ($año)"; ?></h3>
             <p><?php echo $descripcion; ?></p>
             <p><strong>Vendedor:</strong> <?php echo $precio; ?></p>
-            <!-- Botón modificado: ahora redirige directamente a WhatsApp -->
             <a class="boton-whatsapp" href="<?php echo $urlWhatsApp; ?>" target="_blank">Contactar por WhatsApp</a>
         </div>
         <?php
     }
     ?>
+    </div>
+    
+    <!-- Lightbox HTML -->
+    <div class="lightbox-overlay">
+        <span class="lightbox-close">&times;</span>
+        <div class="lightbox-swiper-container">
+            <div class="swiper-wrapper"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
     </div>
     <?php
 } else {
@@ -144,19 +204,64 @@ if (!empty($attributes['cards']) && is_array($attributes['cards'])) {
 ?>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-    // Inicializar Swiper en cada contenedor
+    const cardSwipers = [];
     document.querySelectorAll('.swiper-container').forEach(function (container) {
-        new Swiper(container, {
+        const swiper = new Swiper(container, {
             loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
+            pagination: { el: '.swiper-pagination', clickable: true },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }
         });
+        container.swiperInstance = swiper;
+    });
+
+    const lightboxOverlay = document.querySelector('.lightbox-overlay');
+    const lightboxClose = document.querySelector('.lightbox-close');
+    const lightboxSwiperContainer = document.querySelector('.lightbox-swiper-container');
+    let lightboxSwiper = null;
+
+    document.querySelectorAll('.swiper-slide img').forEach(img => {
+        img.addEventListener('click', function() {
+            const container = this.closest('.swiper-container');
+            const images = JSON.parse(container.dataset.images);
+            const currentIndex = container.swiperInstance.realIndex;
+            
+            const wrapper = lightboxSwiperContainer.querySelector('.swiper-wrapper');
+            wrapper.innerHTML = images.map(url => `
+                <div class="swiper-slide">
+                    <img src="${url}" alt="Vista completa">
+                </div>
+            `).join('');
+            
+            if (lightboxSwiper) lightboxSwiper.destroy();
+            lightboxSwiper = new Swiper(lightboxSwiperContainer, {
+                initialSlide: currentIndex,
+                loop: true,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                }
+            });
+            
+            lightboxOverlay.style.display = 'flex';
+        });
+    });
+
+    function closeLightbox() {
+        lightboxOverlay.style.display = 'none';
+        if (lightboxSwiper) {
+            lightboxSwiper.destroy();
+            lightboxSwiper = null;
+        }
+    }
+
+    lightboxOverlay.addEventListener('click', e => {
+        if (e.target === lightboxOverlay || e.target.classList.contains('lightbox-close')) {
+            closeLightbox();
+        }
+    });
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeLightbox();
     });
 });
 </script>
