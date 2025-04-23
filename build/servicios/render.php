@@ -5,9 +5,10 @@
 
 // Agregar estilos en línea para el bloque
 echo '<style>
+    /* Contenedor principal: grid con 2 columnas fijas */
     .servicios-container {
         display: grid;
-        grid-template-columns: 1fr;          /* 1 columna por defecto (móvil) */
+        grid-template-columns: repeat(2, 1fr);  /* <-- aquí forzamos 2 columnas */
         gap: 20px;
         margin: 0 auto;
         max-width: 1200px;
@@ -15,16 +16,21 @@ echo '<style>
         box-sizing: border-box;
     }
 
-    /* A partir de 600px de ancho: 2 columnas */
-    @media (min-width: 600px) {
+    /* Opcional: en móviles mostramos solo 1 columna */
+    @media (max-width: 600px) {
         .servicios-container {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr;
         }
     }
 
+<<<<<<< HEAD
     .servicio-card {
         width: 100%;
         min-width: 0;          /* permite que el contenido se encoja */
+=======
+    /* Tarjeta individual */
+    .servicio-card {
+>>>>>>> parent of 76dc705 (modificacion al bloque de servicios v2)
         display: flex;
         flex-direction: row;
         background: #fff;
@@ -41,12 +47,18 @@ echo '<style>
     }
 
     .servicio-imagen {
+<<<<<<< HEAD
         /* capamos el ancho: no superará 250px */
         max-width: 250px;
         width: 100%;
         height: auto;
         object-fit: cover;
         flex-shrink: 1;       /* deja que se reduzca si hace falta */
+=======
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+>>>>>>> parent of 76dc705 (modificacion al bloque de servicios v2)
     }
 
     .servicio-content {
@@ -59,9 +71,28 @@ echo '<style>
         min-width: 0;         /* importante para que el texto no empuje */
     }
 
+<<<<<<< HEAD
     .servicio-titulo { font-size: 18px; font-weight: bold; margin: 10px 0; }
     .servicio-prestador { font-size: 14px; color: #777; margin: 0; }
     .servicio-descripcion { font-size: 14px; margin: 5px 0; }
+=======
+    .servicio-titulo {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+
+    .servicio-prestador {
+        font-size: 14px;
+        color: #777;
+        margin: 0;
+    }
+
+    .servicio-descripcion {
+        font-size: 14px;
+        margin: 5px 0;
+    }
+>>>>>>> parent of 76dc705 (modificacion al bloque de servicios v2)
 
     .servicio-whatsapp {
         display: inline-block;
@@ -74,9 +105,10 @@ echo '<style>
         margin-top: 10px;
         transition: background-color 0.3s ease;
     }
-    .servicio-whatsapp:hover { background-color: #20b858; }
+    .servicio-whatsapp:hover {
+        background-color: #20b858;
+    }
 </style>';
-
 
 // Obtener atributos del bloque (evita error si no existen atributos)
 $servicios = $block->attributes['servicios'] ?? [];
