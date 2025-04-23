@@ -5,15 +5,22 @@
 
 // Agregar estilos en línea para el bloque
 echo '<style>
-    /* Contenedor principal: usamos grid para repartir las tarjetas en columnas responsivas */
+    /* Contenedor principal: grid con 2 columnas fijas */
     .servicios-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: repeat(2, 1fr);  /* <-- aquí forzamos 2 columnas */
         gap: 20px;
         margin: 0 auto;
-        max-width: 1200px; /* Ajusta según tu preferencia */
+        max-width: 1200px;
         padding: 20px;
         box-sizing: border-box;
+    }
+
+    /* Opcional: en móviles mostramos solo 1 columna */
+    @media (max-width: 600px) {
+        .servicios-container {
+            grid-template-columns: 1fr;
+        }
     }
 
     /* Tarjeta individual */
