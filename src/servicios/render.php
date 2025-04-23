@@ -22,10 +22,9 @@ echo '<style>
         }
     }
 
-    /* Aseguramos que cada tarjeta ocupe el 100% de su celda y pueda encogerse */
     .servicio-card {
         width: 100%;
-        min-width: 0;          /* permite que flex/children no forcen más ancho */
+        min-width: 0;          /* permite que el contenido se encoja */
         display: flex;
         flex-direction: row;
         background: #fff;
@@ -41,8 +40,15 @@ echo '<style>
         transform: translateY(-2px);
     }
 
-    /* El resto de estilos de .servicio-imagen, .servicio-content, etc. */
-    .servicio-imagen { width: 100%; height: auto; object-fit: cover; }
+    .servicio-imagen {
+        /* capamos el ancho: no superará 250px */
+        max-width: 250px;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        flex-shrink: 1;       /* deja que se reduzca si hace falta */
+    }
+
     .servicio-content {
         display: flex;
         flex-direction: column;
@@ -50,10 +56,13 @@ echo '<style>
         flex: 1;
         padding: 15px;
         box-sizing: border-box;
+        min-width: 0;         /* importante para que el texto no empuje */
     }
+
     .servicio-titulo { font-size: 18px; font-weight: bold; margin: 10px 0; }
     .servicio-prestador { font-size: 14px; color: #777; margin: 0; }
     .servicio-descripcion { font-size: 14px; margin: 5px 0; }
+
     .servicio-whatsapp {
         display: inline-block;
         background-color: #25D366;
