@@ -171,7 +171,7 @@ if (!empty($attributes['cards']) && is_array($attributes['cards'])) {
         $año = esc_html($card['año'] ?? '');
         $precio = esc_html($card['precio'] ?? '');
         $descripcion = esc_html($card['descripcion'] ?? '');
-        $whatsapp = isset($card['whatsapp']) ? preg_replace('/\D/', '', $card['whatsapp']) : '';
+        $whatsapp =  esc_html($card['whatsapp'] ?? '');
         $imagenes = $card['imagenes'] ?? [];
         
         $mensaje = !empty($card['mensajePersonalizado']) ? 
@@ -198,14 +198,17 @@ if (!empty($attributes['cards']) && is_array($attributes['cards'])) {
             echo '<p>' . $descripcion . '</p>';
         }
         
+       
+
         if (!empty($whatsapp)) {
-            echo '<a href="https://wa.me/' . $whatsapp . '?text=' . $mensaje . '" 
-                 class="boton-whatsapp" 
-                 target="_blank" 
-                 rel="noopener noreferrer">';
+            echo '<a href="' . $whatsapp . '" 
+                     class="boton-whatsapp" 
+                     target="_blank" 
+                     rel="noopener noreferrer">';
             echo 'Contactar por WhatsApp';
             echo '</a>';
         }
+
         
         echo '</div></div></div>';
     }
