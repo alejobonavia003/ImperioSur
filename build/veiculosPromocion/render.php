@@ -54,8 +54,12 @@ echo '<style>
     background: #fff;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 }
 
 .tarjeta-simple:hover {
@@ -92,14 +96,13 @@ echo '<style>
 
 .boton-whatsapp {
     display: block;
-    width: 100%;
     padding: 12px;
     background: rgb(65, 211, 101);
     color: white !important;
     text-align: center;
     text-decoration: none;
     border-radius: 8px;
-    margin-top: 15px;
+    margin: 15px;
     font-weight: 600;
     transition: background 0.3s ease;
 }
@@ -128,9 +131,10 @@ echo '<style>
     }
     
     .tarjeta-simple {
-        min-width: 85vw;
+        /* min-width: 85vw; */
         scroll-snap-align: start;
         flex-shrink: 0;
+        max-width: 250px;
     }
     
     /* Ocultar scrollbar */
@@ -156,7 +160,7 @@ echo '<div class="contenedor-unificado">';
 // Sección "Ver más"
 echo '<div class="seccion-ver-mas">';
 echo '<h2 class="titulo-ver-mas">Conoce nuestra sección de vehículos</h2>';
-echo '<a href="https://imperiosur.com/vehiculos/" class="boton-ver-mas">';
+echo '<a href="https://imperiosur.com/tienda/?categoria=vehiculos" class="boton-ver-mas">';
 echo '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l-1.41 1.41L16.17 7H4v2h12.17l-5.58 5.59L12 15l8-8-8-8z"/></svg>';
 echo 'Ver Todos los Vehículos';
 echo '</a>';
@@ -197,8 +201,10 @@ if (!empty($attributes['cards']) && is_array($attributes['cards'])) {
         if (!empty($descripcion)) {
             echo '<p>' . $descripcion . '</p>';
         }
+    
+
         
-       
+        echo '</div></div>';
 
         if (!empty($whatsapp)) {
             echo '<a href="' . $whatsapp . '" 
@@ -208,9 +214,7 @@ if (!empty($attributes['cards']) && is_array($attributes['cards'])) {
             echo 'Contactar por WhatsApp';
             echo '</a>';
         }
-
-        
-        echo '</div></div></div>';
+        echo '</div>';
     }
     
     echo '</div>'; // Cierra promocion-autos-container

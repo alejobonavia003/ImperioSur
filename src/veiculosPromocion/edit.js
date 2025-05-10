@@ -52,7 +52,7 @@ export default function Edit(props) {
             {cards.map((card, index) => {
                 const isOpen = openIndex === index;
                 return (
-                    <Card key={index} style={{ marginBottom: '15px', border: '1px solid #eee' }}>
+                    <Card key={index} style={{ marginBottom: '15px', border: '1px solid #eee', maxWidth: '600px' }}>
                         <div
                             style={{
                                 display: 'flex',
@@ -118,7 +118,7 @@ export default function Edit(props) {
                                     onChange={(value) => updateCard(index, 'descripcion', value)}
                                 />
                                 <TextControl
-                                    label="Link de WhatsApp (o cualquier link de contacto)"
+                                    label="Link del producto de Woocommerce"
                                     value={card.whatsapp}
                                     onChange={(value) => updateCard(index, 'whatsapp', value)}
                                 />
