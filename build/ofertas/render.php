@@ -112,12 +112,38 @@ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.30);
   .ct-woo-card-actions .button {
     font-size: 8px;
     padding: 6px 8px;
-    white-space: normal; /* Permite salto de línea */
-    word-break: break-word;
   }
   .price {
     font-size: 8px;
+  }
+  .custom-product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 140px;
+    max-width: 160px;
+    padding: 8px;
+  }
+  .ct-woo-card-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+  }
+  .ct-woo-card-actions .button {
+    font-size: 11px;
+    padding: 6px 8px;
+    width: 100%;
+    box-sizing: border-box;
+    white-space: normal;
+  }
+  .price {
+    font-size: 12px;
+    margin-bottom: 4px;
     word-break: break-word;
+    width: 100%;
+    text-align: center;
   }
 }
 /* --- FIN RESPONSIVE --- */
