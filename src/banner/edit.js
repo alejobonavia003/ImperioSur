@@ -26,26 +26,61 @@ export default function Edit({ attributes, setAttributes }) {
     const blockProps = useBlockProps(); // Se define una sola vez
 
     return (
-        <div {...blockProps}>
-            <p>{__('BANNER QUE OCUPA EL 100% DEL ANCHO', 'imperiosur')}</p>
+        <div style={{ 
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            padding: 20,
+            borderRadius: 10,
+            maxWidth: 600,
+            flexWrap: 'wrap',
+            justifyContent: 'space-between',
+         }}>
 
             {images.map((image, index) => (
-                <div key={index} style={{ marginBottom: '20px' }}>
-                    <img src={image.url} style={{ width: '100%', maxHeight: '300px', objectFit: 'cover' }} />
-                    
-                    <TextControl
-                        label={__('Link', 'imperiosur')}
-                        value={image.link}
-                        onChange={(newLink) => updateImageLink(index, newLink)}
+                <div
+                    key={index}
+                    style={{
+                        marginBottom: 28,
+                        border: '1px solid #e0e0e0',
+                        borderRadius: 10,
+                        background: '#fafbfc',
+                        padding: 18,
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        flexDirection: 'column',
+                        maxWidth: 100,
+                    }}
+                >
+                    <img
+                        src={image.url}
+                        style={{
+                            width: 120,
+                            height: 80,
+                            objectFit: 'cover',
+                            borderRadius: 6,
+                            border: '1px solid #ddd',
+                            background: '#fff',
+                            flexShrink: 0,
+                        }}
+                        alt=""
                     />
-                    
-                    <Button
-                        isDestructive
-                        onClick={() => removeImage(index)}
-                        style={{ marginTop: '10px' }}
-                    >
-                        {__('Remove', 'imperiosur')}
-                    </Button>
+                    <div style={{ flex: 1 }}>
+                        <TextControl
+                            label={__('Link', 'imperiosur')}
+                            value={image.link}
+                            onChange={(newLink) => updateImageLink(index, newLink)}
+                            style={{ marginBottom: 12 }}
+                        />
+                        <Button
+                            isDestructive
+                            onClick={() => removeImage(index)}
+                            style={{ marginTop: 4 }}
+                        >
+                            {__('Remove', 'imperiosur')}
+                        </Button>
+                    </div>
                 </div>
             ))}
 
