@@ -97,6 +97,30 @@ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.30);
   display: block;
 }
 
+/* --- RESPONSIVE --- */
+@media (max-width: 600px) {
+  .product-block-content {
+    gap: 8px;
+    padding: 8px;
+  }
+  .woocommerce ul.custom-container li.product,
+  .custom-product {
+    min-width: 140px;
+    max-width: 160px;
+    padding: 8px;
+  }
+  .ct-woo-card-actions .button {
+    font-size: 12px;
+    padding: 6px 8px;
+    white-space: normal; /* Permite salto de línea */
+    word-break: break-word;
+  }
+  .price {
+    font-size: 12px;
+    word-break: break-word;
+  }
+}
+/* --- FIN RESPONSIVE --- */
 
 </style>
 <?php
