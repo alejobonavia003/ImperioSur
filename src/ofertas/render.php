@@ -110,13 +110,13 @@ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.30);
     padding: 8px;
   }
   .ct-woo-card-actions .button {
-    font-size: 12px;
+    font-size: 8px;
     padding: 6px 8px;
     white-space: normal; /* Permite salto de línea */
     word-break: break-word;
   }
   .price {
-    font-size: 12px;
+    font-size: 8px;
     word-break: break-word;
   }
 }
